@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Site Yönetimi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* Login Screen */
+    .login-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 3rem;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .login-container p {
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .login-form {
+      text-align: left;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .login-form input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .login-error {
+      color: #ef4444;
+      margin-bottom: 1rem;
+      display: none;
+      font-size: 0.9rem;
+    }
+
+    .login-error.show {
+      display: block;
+    }
+
+    /* Admin Panel */
+    .admin-container {
+      display: none;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    .admin-container.show {
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #6366f1;
+      padding-bottom: 1rem;
+      font-size: 2rem;
+    }
+    
+    h2 {
+      color: #374151;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #6b7280;
+      transition: all 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab:hover {
+      color: #6366f1;
+    }
+
+    .tab.active {
+      color: #6366f1;
+      border-bottom-color: #6366f1;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      color: #374151;
+      font-weight: 600;
+      font-size: 0.95rem;
+      gap: 0.5rem;
+    }
+    
+    label::before {
+      content: '✏️';
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #6366f1;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .image-upload {
+      border: 2px dashed #e5e7eb;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .image-upload:hover {
+      border-color: #6366f1;
+      background: #f9fafb;
+    }
+
+    .image-upload input {
+      display: none;
+    }
+
+    .image-preview {
+      margin-top: 1rem;
+      max-width: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .image-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-right: 1rem;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+    }
+    
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: #6b7280;
+    }
+
+    .btn-secondary:hover {
+      background: #4b5563;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .alert.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 2px solid #10b981;
+    }
+
+    .alert.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 2px solid #ef4444;
+    }
+
+    .alert.show {
+      display: block;
+    }
+
+    .language-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .lang-tab {
+      padding: 0.5rem 1rem;
+      background: #f3f4f6;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .lang-tab.active {
+      background: #6366f1;
+      color: white;
+    }
+
+    .content-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .content-item {
+      padding: 1rem;
+      background: #f9fafb;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content-item h3 {
+      margin-bottom: 0.5rem;
+      color: #374151;
+    }
+
+    .content-item p {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    .btn-edit,
+    .btn-delete {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+
+    .btn-edit {
+      background: #6366f1;
+      color: white;
+    }
+
+    .btn-delete {
+      background: #ef4444;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .card:hover {
+      border-color: #6366f1;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #374151;
+      font-size: 1.2rem;
+    }
+    
+    /* Professional enhancements */
+    .tabs {
+      background: #f9fafb;
+      padding: 0.5rem;
+      border-radius: 12px;
+    }
+    
+    .tab {
+      border-radius: 8px;
+    }
+    
+    .tab.active {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .alert {
+      border-left: 4px solid;
+      padding-left: 1.5rem;
+    }
+    
+    .alert.success {
+      border-left-color: #10b981;
+    }
+    
+    .alert.error {
+      border-left-color: #ef4444;
+    }
+    
+    input:focus,
+    textarea:focus {
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+    
+    .image-upload {
+      transition: all 0.3s;
+    }
+    
+    .image-upload:hover {
+      background: #f9fafb;
+      border-color: #6366f1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div class="login-container" id="loginScreen">
+    <h1>🔐 Admin Panel</h1>
+    <p>Site yönetim paneline erişmek için şifrenizi girin</p>
+    <div class="login-form">
+      <div class="login-error" id="loginError">Hatalı şifre! Lütfen tekrar deneyin.</div>
+      <input type="password" id="passwordInput" placeholder="Şifre" autocomplete="off">
+      <button class="btn" onclick="checkPassword()" style="width: 100%;">Giriş Yap</button>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div class="admin-container" id="adminPanel">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <h1>🚀 Site Yönetim Paneli</h1>
+      <button class="btn btn-secondary" onclick="logout()" style="background: #ef4444;">Çıkış Yap</button>
+    </div>
+    <div class="container">
+
+    <div class="alert" id="alert"></div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('hero')">Hero Section</button>
+      <button class="tab" onclick="showTab('about')">Hakkımda</button>
+      <button class="tab" onclick="showTab('services')">Servisler</button>
+      <button class="tab" onclick="showTab('projects')">Projeler</button>
+      <button class="tab" onclick="showTab('experience')">Deneyim</button>
+      <button class="tab" onclick="showTab('contact')">İletişim</button>
+      <button class="tab" onclick="showTab('translations')">Çeviriler</button>
+    </div>
+
+    <!-- Hero Section -->
+    <div id="hero" class="tab-content active">
+      <h2>Hero Section Düzenle</h2>
+      <div class="language-tabs">
+        <button class="lang-tab active" onclick="showLang('en', 'hero')">English</button>
+        <button class="lang-tab" onclick="showLang('tr', 'hero')">Türkçe</button>
+      </div>
+
+      <div id="hero-en" class="lang-content active">
+        <div class="form-group">
+          <label>Title (EN)</label>
+          <input type="text" id="hero-title-en" placeholder="Unreal Engine & Unity Plugin Developer">
+        </div>
+        <div class="form-group">
+          <label>Subtitle (EN)</label>
+          <input type="text" id="hero-subtitle-en" placeholder="Game Engine Plugins and Mobile Development Expert">
+        </div>
+        <div class="form-group">
+          <label>Description (EN)</label>
+          <textarea id="hero-description-en" placeholder="I specialize in professional plugin development..."></textarea>
+        </div>
+      </div>
+
+      <div id="hero-tr" class="lang-content">
+        <div class="form-group">
+          <label>Title (TR)</label>
+          <input type="text" id="hero-title-tr" placeholder="Unreal Engine & Unity Plugin Developer">
+        </div>
+        <div class="form-group">
+          <label>Subtitle (TR)</label>
+          <input type="text" id="hero-subtitle-tr" placeholder="Oyun Motoru Eklentileri ve Mobil Geliştirme Uzmanı">
+        </div>
+        <div class="form-group">
+          <label>Description (TR)</label>
+          <textarea id="hero-description-tr" placeholder="Unreal Engine ve Unity için profesyonel plugin geliştirme..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Background Image</label>
+        <div class="image-upload" onclick="document.getElementById('hero-bg-image').click()">
+          <p>📷 Resim Yükle (Tıklayın)</p>
+          <input type="file" id="hero-bg-image" accept="image/*" onchange="handleImageUpload(this, 'hero-bg-preview')">
+          <div class="image-preview" id="hero-bg-preview"></div>
+        </div>
+      </div>
+
+      <button class="btn" onclick="saveHero()">Kaydet</button>
+      <button class="btn btn-secondary" onclick="loadHero()">Yükle</button>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="tab-content">
+      <h2>Hakkımda Düzenle</h2>
+      <div class="language-tabs">
+        <button class="lang-tab active" onclick="showLang('en', 'about')">English</button>
+        <button class="lang-tab" onclick="showLang('tr', 'about')">Türkçe</button>
+      </div>
+
+      <div id="about-en" class="lang-content active">
+        <div class="form-group">
+          <label>Paragraph 1 (EN)</label>
+          <textarea id="about-p1-en"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Paragraph 2 (EN)</label>
+          <textarea id="about-p2-en"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Paragraph 3 (EN)</label>
+          <textarea id="about-p3-en"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Paragraph 4 (EN)</label>
+          <textarea id="about-p4-en"></textarea>
+        </div>
+      </div>
+
+      <div id="about-tr" class="lang-content">
+        <div class="form-group">
+          <label>Paragraph 1 (TR)</label>
+          <textarea id="about-p1-tr"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Paragraph 2 (TR)</label>
+          <textarea id="about-p2-tr"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Paragraph 3 (TR)</label>
+          <textarea id="about-p3-tr"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Paragraph 4 (TR)</label>
+          <textarea id="about-p4-tr"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Profile Image</label>
+        <div class="image-upload" onclick="document.getElementById('about-profile-image').click()">
+          <p>📷 Profil Resmi Yükle (Tıklayın)</p>
+          <input type="file" id="about-profile-image" accept="image/*" onchange="handleImageUpload(this, 'about-profile-preview')">
+          <div class="image-preview" id="about-profile-preview"></div>
+        </div>
+      </div>
+
+      <button class="btn" onclick="saveAbout()">Kaydet</button>
+      <button class="btn btn-secondary" onclick="loadAbout()">Yükle</button>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="tab-content">
+      <h2>Servisler</h2>
+      <button class="btn" onclick="addService()">+ Yeni Servis Ekle</button>
+      <div id="services-list" class="content-list"></div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="tab-content">
+      <h2>Projeler</h2>
+      <button class="btn" onclick="addProject()">+ Yeni Proje Ekle</button>
+      <div id="projects-list" class="content-list"></div>
+    </div>
+
+    <!-- Experience Section -->
+    <div id="experience" class="tab-content">
+      <h2>Deneyim</h2>
+      <button class="btn" onclick="addExperience()">+ Yeni Deneyim Ekle</button>
+      <div id="experience-list" class="content-list"></div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="tab-content">
+      <h2>İletişim Bilgileri</h2>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="contact-email" placeholder="mucahit.muzaffer@gmail.com">
+      </div>
+      <div class="form-group">
+        <label>LinkedIn URL</label>
+        <input type="url" id="contact-linkedin" placeholder="https://www.linkedin.com/in/mucahitmuzaffer">
+      </div>
+      <div class="form-group">
+        <label>GitHub URL</label>
+        <input type="url" id="contact-github" placeholder="https://github.com/MeetlyTR">
+      </div>
+      <div class="language-tabs">
+        <button class="lang-tab active" onclick="showLang('en', 'contact')">English</button>
+        <button class="lang-tab" onclick="showLang('tr', 'contact')">Türkçe</button>
+      </div>
+      <div id="contact-en" class="lang-content active">
+        <div class="form-group">
+          <label>Description (EN)</label>
+          <textarea id="contact-description-en"></textarea>
+        </div>
+      </div>
+      <div id="contact-tr" class="lang-content">
+        <div class="form-group">
+          <label>Description (TR)</label>
+          <textarea id="contact-description-tr"></textarea>
+        </div>
+      </div>
+      <button class="btn" onclick="saveContact()">Kaydet</button>
+      <button class="btn btn-secondary" onclick="loadContact()">Yükle</button>
+    </div>
+
+    <!-- Translations Section -->
+    <div id="translations" class="tab-content">
+      <h2>Çeviriler (JSON Düzenle)</h2>
+      <div class="form-group">
+        <label>Translations JSON</label>
+        <textarea id="translations-json" style="min-height: 500px; font-family: monospace;"></textarea>
+      </div>
+      <button class="btn" onclick="saveTranslations()">Kaydet</button>
+      <button class="btn btn-secondary" onclick="loadTranslations()">Yükle</button>
+    </div>
+
+    <!-- Export/Import -->
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb;">
+      <h2>Export/Import</h2>
+      <button class="btn" onclick="exportData()">📥 Tüm Verileri Export Et</button>
+      <button class="btn btn-secondary" onclick="document.getElementById('import-file').click()">📤 Import Et</button>
+      <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importData(this)">
+      <button class="btn btn-secondary" onclick="downloadJSON()">💾 JSON Olarak İndir</button>
+    </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+  <script>
+    // Password Protection
+    // Şifreyi buradan değiştirebilirsiniz
+    const ADMIN_PASSWORD = 'Meetly2024!'; // Bu şifreyi değiştirin!
+    const SESSION_KEY = 'adminAuthenticated';
+    const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 saat
+
+    // Check if user is authenticated
+    function checkAuth() {
+      const authData = localStorage.getItem(SESSION_KEY);
+      if (authData) {
+        try {
+          const { authenticated, timestamp } = JSON.parse(authData);
+          const now = Date.now();
+          // Check if session is still valid (24 hours)
+          if (authenticated && (now - timestamp) < SESSION_DURATION) {
+            showAdminPanel();
+            return true;
+          } else {
+            // Session expired
+            localStorage.removeItem(SESSION_KEY);
+          }
+        } catch (e) {
+          localStorage.removeItem(SESSION_KEY);
+        }
+      }
+      return false;
+    }
+
+    // Check password
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      const errorDiv = document.getElementById('loginError');
+      
+      if (password === ADMIN_PASSWORD) {
+        // Set authentication
+        localStorage.setItem(SESSION_KEY, JSON.stringify({
+          authenticated: true,
+          timestamp: Date.now()
+        }));
+        showAdminPanel();
+        errorDiv.classList.remove('show');
+      } else {
+        errorDiv.classList.add('show');
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInput').focus();
+      }
+    }
+
+    // Show admin panel
+    function showAdminPanel() {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('adminPanel').classList.add('show');
+      // Initialize admin functions
+      if (typeof loadTranslations === 'function') {
+        loadTranslations();
+      }
+      if (typeof loadHero === 'function') {
+        loadHero();
+      }
+      if (typeof loadAbout === 'function') {
+        loadAbout();
+      }
+      if (typeof loadContact === 'function') {
+        loadContact();
+      }
+    }
+
+    // Logout
+    function logout() {
+      if (confirm('Çıkış yapmak istediğinize emin misiniz?')) {
+        localStorage.removeItem(SESSION_KEY);
+        location.reload();
+      }
+    }
+
+    // Enter key to submit
+    document.addEventListener('DOMContentLoaded', function() {
+      const passwordInput = document.getElementById('passwordInput');
+      if (passwordInput) {
+        passwordInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            checkPassword();
+          }
+        });
+        // Focus on password input
+        passwordInput.focus();
+      }
+
+      // Check if already authenticated
+      if (!checkAuth()) {
+        // Show login screen
+        document.getElementById('loginScreen').style.display = 'block';
+        document.getElementById('adminPanel').classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
+
