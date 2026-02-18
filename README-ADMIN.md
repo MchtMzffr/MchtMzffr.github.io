@@ -3,7 +3,7 @@
 ## Admin Paneline Erişim
 
 Admin paneline şu adresten erişebilirsiniz:
-- **URL**: `https://meetlytr.github.io/admin.html`
+- **URL**: `https://mchtmzffr.github.io/admin.html`
 - **Yerel**: `http://localhost/admin.html` (local server çalıştırıyorsanız)
 
 🔐 **Güvenlik**: Admin paneli şifre korumalıdır. Şifreyi `admin.html` dosyasındaki `ADMIN_PASSWORD` değişkeninden değiştirebilirsiniz.
