@@ -81,10 +81,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -553,10 +562,19 @@
     },
     "about": {
       "title": "Hakkımda",
-      "p1": "Merhaba! Ben **Muzaffer Karafil**. Üretim disiplininden gelen düzen ve hassasiyeti teknoloji merakıyla birleştiriyorum.",
-      "p2": "Togg'da **Paint Maintenance** ekibinde görev alıyor; aynı zamanda **Meetly** projesinin geliştiricisi olarak mobil ve yapay zekâ odaklı ürünler üzerinde çalışıyorum.",
-      "p3": "**Unreal Engine** ve **Unity** için profesyonel plugin geliştirme konusunda uzmanlaşıyorum. Oyun motorlarına özel çözümler üretmek, geliştiricilerin iş akışlarını optimize etmek ve performanslı araçlar geliştirmek benim tutkum.",
-      "p4": "Her plugin, modüler mimari, performans odaklı tasarım ve geliştirici dostu dokümantasyon ile gelir. Cross-platform desteği ve version control friendly yapı, projelerinizin başarısını garanti eder."
+      "p1": "Merhaba! Ben **Muzaffer Karafil**. Üretimden gelen disiplin ve hassasiyeti teknoloji tutkusu ve sistematik, güvenli karar sistemlerine olan ilgimle birleştiriyorum.",
+      "p2": "Togg'da **Paint Maintenance** ekibinde çalışıyorum ve **Meetly** projesini mobil ve yapay zeka odaklı ürün geliştiricisi olarak yürütüyorum. Bunun yanında **Decision Ecosystem** üzerinde tasarım ve katkı sağlıyorum—otonom ve yapay zeka destekli sistemler için alan bağımsız, sözleşme öncelikli bir yığın.",
+      "p3": "**Unreal Engine** plugin geliştirme ve Ekosistem çekirdekleri üzerine odaklanıyorum: öneri üretimi, gardiyanlar ve modülasyon, operasyonel sağlık, ölçülebilir garantiler. Net mimari, kapalı devre güvenlik ve koduyla uyumlu dokümantasyon önceliğim.",
+      "p4": "Her çıktı—plugin veya ekosistem çekirdekleri—modüler tasarım, test edilebilir değişmezler ve geliştirici dostu dokümanları hedefler. Decision Ecosystem mimarisi, yol haritası ve entegrasyon rehberi GitHub’ta, canlı bir wiki gibi güncelleniyor.",
+      "purposeTitle": "Amaç",
+      "purpose": "Güvenli, ölçülebilir ve entegre edilmesi kolay **yeniden kullanılabilir, alan bağımsız karar altyapısı** kurmak ve paylaşmak—böylece otonom ve yapay zeka destekli sistemler güvenle ele alınsın ve iyileştirilsin.",
+      "goalsTitle": "Hedefler",
+      "goals": [
+        "Ekosistemi **sözleşme öncelikli** ve **kapalı devre** tutmak; her çekirdek yalnızca şemaya bağlı olsun.",
+        "Mimari, formüller ve entegrasyonu tek yerde (GitHub) dokümante etmek ve güncel tutmak.",
+        "Çekirdekler arasında sürüm ve etiketleri hizalamak; uyumluluk net olsun.",
+        "Yol haritasını toplulukla büyütmek: açıklanabilirlik, araçlar ve gerçek kullanım senaryoları."
+      ]
     },
     "projects": {
       "title": "Projelerim",
@@ -1001,10 +1019,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -1289,10 +1316,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -1577,10 +1613,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -1865,10 +1910,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -2153,10 +2207,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -2441,10 +2504,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -2729,10 +2801,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -3017,10 +3098,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -3305,10 +3395,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -3593,10 +3692,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -3881,10 +3989,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -4169,10 +4286,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -4457,10 +4583,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -4745,10 +4880,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -5033,10 +5177,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -5321,10 +5474,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -5609,10 +5771,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -5897,10 +6068,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -6185,10 +6365,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -6473,10 +6662,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -6761,10 +6959,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -7049,10 +7256,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -7337,10 +7553,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -7625,10 +7850,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -7913,10 +8147,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -8201,10 +8444,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -8489,10 +8741,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -8777,10 +9038,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -9065,10 +9335,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -9353,10 +9632,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -9641,10 +9929,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -9929,10 +10226,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -10217,10 +10523,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -10505,10 +10820,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -10793,10 +11117,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",
@@ -11081,10 +11414,19 @@
     },
     "about": {
       "title": "About Me",
-      "p1": "Hello! I'm **Muzaffer Karafil**. I combine the discipline and precision from manufacturing with a passion for technology.",
-      "p2": "I work in the **Paint Maintenance** team at Togg, and at the same time, I develop the **Meetly** project as a mobile and AI-focused product developer.",
-      "p3": "I specialize in professional plugin development for **Unreal Engine** and **Unity**. Creating custom solutions for game engines, optimizing developers' workflows, and developing performant tools is my passion.",
-      "p4": "Every plugin comes with modular architecture, performance-oriented design, and developer-friendly documentation. Cross-platform support and version control-friendly structure guarantee the success of your projects."
+      "p1": "Hello! I'm **Muzaffer Karafil**. I combine discipline and precision from manufacturing with a passion for technology and for systematic, safe decision systems.",
+      "p2": "I work in the **Paint Maintenance** team at Togg and develop the **Meetly** project as a mobile and AI-focused product developer. In parallel, I design and contribute to the **Decision Ecosystem**—a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems.",
+      "p3": "I focus on **Unreal Engine** plugin development and on the Ecosystem's cores: proposal generation, guards and modulation, operational health, and measurable guarantees. I care about clear architecture, fail-closed safety, and documentation that stays in sync with the code.",
+      "p4": "Every deliverable—plugins or ecosystem cores—aims for modular design, testable invariants, and developer-friendly docs. The Decision Ecosystem architecture, roadmap, and integration guide live on GitHub so they can evolve like a living wiki.",
+      "purposeTitle": "Purpose",
+      "purpose": "To build and share **reusable, domain-agnostic decision infrastructure** that is safe, measurable, and easy to integrate—so that autonomous and AI-driven systems can be reasoned about and improved with confidence.",
+      "goalsTitle": "Goals",
+      "goals": [
+        "Keep the Ecosystem **contract-first** and **fail-closed**; every core depends only on the schema.",
+        "Document architecture, formulas, and integration in one place (GitHub) and keep them up to date.",
+        "Align releases and tags across cores so that versions and compatibility are clear.",
+        "Grow the roadmap with the community: explainability, tooling, and real-world use cases."
+      ]
     },
     "projects": {
       "title": "My Projects",

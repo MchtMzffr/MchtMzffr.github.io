@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>decision-schema — Decision Ecosystem</title>
+  <link rel="canonical" href="https://mchtmzffr.github.io/core-decision-schema.html"/>
+  <style>
+    :root { --primary: #6366f1; --primary-dark: #4f46e5; --primary-light: #818cf8; --secondary: #8b5cf6; --accent: #ec4899; --fg: #1f2937; --fg-light: #6b7280; --bg: #ffffff; --bg-light: #f9fafb; --bg-dark: #f3f4f6; --border: #e5e7eb; --shadow: 0 1px 3px rgba(0,0,0,0.1); --radius: 12px; --radius-lg: 16px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--fg); background: var(--bg); font-size: 16px; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 1rem 0; box-shadow: var(--shadow); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-menu { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .nav-menu a { color: var(--fg); text-decoration: none; font-weight: 500; }
+    .nav-menu a:hover { color: var(--primary); }
+    .language-selector select { padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: white; font-size: 0.9rem; cursor: pointer; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 4rem 0; }
+    .page-title { margin-top: 80px; padding: 2rem 0 1rem; font-size: 2rem; color: var(--primary-dark); }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--primary); font-weight: 600; text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
+    h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; color: var(--fg); }
+    h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: var(--primary-dark); }
+    p, li { margin-bottom: 0.75rem; }
+    ul { margin-left: 1.25rem; }
+    .code-block { background: var(--bg-dark); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin: 1rem 0; }
+    .footer { background: var(--fg); color: white; padding: 2rem 0; text-align: center; margin-top: 3rem; }
+    .footer p { opacity: 0.85; margin: 0; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">Muzaffer Karafil</a>
+      <ul class="nav-menu">
+        <li><a href="/" data-i18n="nav.home">Home</a></li>
+        <li><a href="/#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="decision-ecosystem.html" data-i18n="nav.decisionEcosystem">Decision Ecosystem</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="language-selector">
+        <select id="language-selector">
+          <option value="tr">Türkçe</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="zh">中文</option>
+          <option value="ko">한국어</option>
+          <option value="ar">العربية</option>
+          <option value="nl">Nederlands</option>
+          <option value="sv">Svenska</option>
+          <option value="no">Norsk</option>
+          <option value="da">Dansk</option>
+          <option value="fi">Suomi</option>
+          <option value="pl">Polski</option>
+          <option value="cs">Čeština</option>
+          <option value="hu">Magyar</option>
+          <option value="ro">Română</option>
+          <option value="bg">Български</option>
+          <option value="el">Ελληνικά</option>
+          <option value="hr">Hrvatski</option>
+          <option value="sr">Српски</option>
+          <option value="sk">Slovenčina</option>
+          <option value="sl">Slovenščina</option>
+          <option value="uk">Українська</option>
+          <option value="et">Eesti</option>
+          <option value="lv">Latviešu</option>
+          <option value="lt">Lietuvių</option>
+          <option value="he">עברית</option>
+          <option value="th">ไทย</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="ms">Bahasa Melayu</option>
+          <option value="tl">Filipino</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container section">
+    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
+    <h1 class="page-title">decision-schema</h1>
+    <p><strong>Source: GitHub repo (ARCHITECTURE.md + README).</strong> Single Source of Truth (SSOT) for contracts in the multi-core decision ecosystem.</p>
+
+    <h2>Purpose</h2>
+    <p><strong>Decision Schema</strong> is the Single Source of Truth (SSOT) for contracts in the multi-core decision ecosystem. It provides shared types and contracts that all decision cores depend on.</p>
+
+    <h2>Core Components</h2>
+    <h3>Types (<code>decision_schema/types.py</code>)</h3>
+    <ul>
+      <li><strong><code>Action</code></strong>: Generic action enum (HOLD, ACT, EXIT, CANCEL, STOP)</li>
+      <li><strong><code>Proposal</code></strong>: MDM output (action, confidence, reasons, params dict)</li>
+      <li><strong><code>FinalDecision</code></strong>: Post-modulation action (action, allowed, reasons, mismatch)</li>
+      <li><strong><code>MismatchInfo</code></strong>: Guard failure flags and reason codes</li>
+    </ul>
+
+    <h3>Packet (<code>decision_schema/packet_v2.py</code>)</h3>
+    <ul>
+      <li><strong><code>PacketV2</code></strong>: End-to-end tracing packet — <code>packet_version</code>, <code>schema_version</code>; fields: <code>run_id</code>, <code>step</code>, <code>input</code>, <code>external</code>, <code>mdm</code>, <code>final_action</code>, <code>latency_ms</code>, <code>mismatch</code></li>
+    </ul>
+
+    <h3>Compatibility (<code>decision_schema/compat.py</code>)</h3>
+    <ul>
+      <li><strong><code>is_compatible()</code></strong>: Check schema version compatibility (minor version ranges for 0.x)</li>
+      <li><strong><code>parse_version()</code></strong>: Parse SemVer to (major, minor, patch)</li>
+      <li><strong><code>get_current_version()</code></strong>: Current schema version</li>
+    </ul>
+
+    <h2>Inputs/Outputs</h2>
+    <p><strong>Inputs:</strong> None (foundation package)</p>
+    <p><strong>Outputs:</strong> Type definitions used by all cores: <code>Proposal</code> → DMC; <code>FinalDecision</code> → executor; <code>PacketV2</code> → evaluation-core; <code>Action</code> enum → all cores.</p>
+
+    <h2>Non-Goals</h2>
+    <ul>
+      <li>Domain-specific logic (schema is domain-agnostic)</li>
+      <li>Runtime behavior (does not execute decisions)</li>
+      <li>Policy enforcement or metrics computation</li>
+    </ul>
+
+    <h2>Design Principles</h2>
+    <ol>
+      <li><strong>SSOT</strong>: Single source of truth for all contracts</li>
+      <li><strong>SemVer</strong>: Compatibility guarantees</li>
+      <li><strong>Domain-agnostic</strong>: Generic types across domains</li>
+      <li><strong>Backward compatibility</strong>: Deprecation plan for smooth transitions</li>
+      <li><strong>Fail-closed</strong>: Invalid versions raise errors</li>
+    </ol>
+
+    <h2>Quick Start (from README)</h2>
+    <pre class="code-block">from decision_schema.types import Proposal, FinalDecision, Action
+from decision_schema.packet_v2 import PacketV2
+from decision_schema.compat import is_compatible
+
+proposal = Proposal(
+    action=Action.ACT,
+    confidence=0.8,
+    reasons=["anomaly_signal", "constraint_violation"],
+    params={"value": 100},
+)</pre>
+    <p>Pin in <code>pyproject.toml</code>: <code>decision-schema&gt;=0.2,&lt;0.3</code></p>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Decision Ecosystem</p></div>
+  </footer>
+  <script src="i18n.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

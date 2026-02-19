@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>evaluation-calibration-core — Decision Ecosystem</title>
+  <link rel="canonical" href="https://mchtmzffr.github.io/core-eval-calibration.html"/>
+  <style>
+    :root { --primary: #6366f1; --primary-dark: #4f46e5; --primary-light: #818cf8; --secondary: #8b5cf6; --accent: #ec4899; --fg: #1f2937; --fg-light: #6b7280; --bg: #ffffff; --bg-light: #f9fafb; --bg-dark: #f3f4f6; --border: #e5e7eb; --shadow: 0 1px 3px rgba(0,0,0,0.1); --radius: 12px; --radius-lg: 16px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--fg); background: var(--bg); font-size: 16px; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 1rem 0; box-shadow: var(--shadow); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-menu { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .nav-menu a { color: var(--fg); text-decoration: none; font-weight: 500; }
+    .nav-menu a:hover { color: var(--primary); }
+    .language-selector select { padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: white; font-size: 0.9rem; cursor: pointer; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 4rem 0; }
+    .page-title { margin-top: 80px; padding: 2rem 0 1rem; font-size: 2rem; color: var(--primary-dark); }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--primary); font-weight: 600; text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
+    h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; color: var(--fg); }
+    h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: var(--primary-dark); }
+    p, li { margin-bottom: 0.75rem; }
+    ul { margin-left: 1.25rem; }
+    .code-block { background: var(--bg-dark); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin: 1rem 0; }
+    .footer { background: var(--fg); color: white; padding: 2rem 0; text-align: center; margin-top: 3rem; }
+    .footer p { opacity: 0.85; margin: 0; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">Muzaffer Karafil</a>
+      <ul class="nav-menu">
+        <li><a href="/" data-i18n="nav.home">Home</a></li>
+        <li><a href="/#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="decision-ecosystem.html" data-i18n="nav.decisionEcosystem">Decision Ecosystem</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="language-selector"><select id="language-selector"><option value="tr">Türkçe</option><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="ru">Русский</option><option value="ja">日本語</option><option value="zh">中文</option><option value="ko">한국어</option><option value="ar">العربية</option><option value="nl">Nederlands</option><option value="sv">Svenska</option><option value="no">Norsk</option><option value="da">Dansk</option><option value="fi">Suomi</option><option value="pl">Polski</option><option value="cs">Čeština</option><option value="hu">Magyar</option><option value="ro">Română</option><option value="bg">Български</option><option value="el">Ελληνικά</option><option value="hr">Hrvatski</option><option value="sr">Српски</option><option value="sk">Slovenčina</option><option value="sl">Slovenščina</option><option value="uk">Українська</option><option value="et">Eesti</option><option value="lv">Latviešu</option><option value="lt">Lietuvių</option><option value="he">עברית</option><option value="th">ไทย</option><option value="vi">Tiếng Việt</option><option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="ms">Bahasa Melayu</option><option value="tl">Filipino</option></select></div>
+    </div>
+  </nav>
+
+  <main class="container section">
+    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
+    <h1 class="page-title">evaluation-calibration-core</h1>
+    <p><strong>Source: GitHub repo (ARCHITECTURE.md).</strong> Evidence artifacts from <code>PacketV2</code> traces.</p>
+
+    <h2>Data flow</h2>
+    <pre class="code-block">PacketV2 traces -> read_packets() -> compute_metrics() -> build_report() -> Report</pre>
+
+    <h2>Metrics computation</h2>
+    <p>From <code>PacketV2</code> traces: action distribution, guard trigger rates, latency percentiles, invariant pass rates.</p>
+
+    <h2>Invariant checks</h2>
+    <ul>
+      <li>Contract closure: Proposal.action and FinalDecision.action in Action enum</li>
+      <li>Confidence clamp: Proposal.confidence in [0,1]</li>
+      <li>Fail-closed: If mismatch has deny flags ⇒ allowed must be False</li>
+      <li>Packet version: PacketV2.schema_version present</li>
+    </ul>
+
+    <h2>Contracts</h2>
+    <ul>
+      <li><strong>Input:</strong> PacketV2 traces (e.g. JSONL)</li>
+      <li><strong>Output:</strong> Metrics dict, Report (JSON + Markdown)</li>
+      <li>Uses <code>decision_schema.packet_v2.PacketV2</code></li>
+    </ul>
+
+    <h2>Components</h2>
+    <h3>1. Packet Reader (<code>eval_calibration_core/io/packet_reader.py</code>)</h3>
+    <p><strong>Class:</strong> <code>PacketReader</code> — Reads PacketV2 from JSONL; validates schema compatibility.</p>
+
+    <h3>2. Metrics Computation (<code>eval_calibration_core/metrics/compute.py</code>)</h3>
+    <p><strong>Function:</strong> <code>compute_metrics(packets: Iterable[PacketV2]) -> dict</code> — Action distribution, guard trigger rates, latency percentiles, invariant verification.</p>
+
+    <h3>3. Report Generation (<code>eval_calibration_core/report.py</code>)</h3>
+    <p><strong>Function:</strong> <code>build_report(packets: Iterable[PacketV2]) -> Report</code> — JSON + Markdown report with metrics and invariant checks.</p>
+
+    <h2>Safety invariants</h2>
+    <ul>
+      <li><strong>Fail-closed:</strong> On errors, empty metrics or safe defaults</li>
+      <li><strong>Deterministic:</strong> Same inputs → same outputs</li>
+      <li><strong>Schema validation:</strong> Reject incompatible PacketV2 versions</li>
+    </ul>
+
+    <h2>Import</h2>
+    <pre class="code-block">from eval_calibration_core.report.builder import build_report</pre>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Decision Ecosystem</p></div>
+  </footer>
+  <script src="i18n.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

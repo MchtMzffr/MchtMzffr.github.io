@@ -8,10 +8,10 @@
   <link rel="canonical" href="https://mchtmzffr.github.io/decision-ecosystem.html"/>
   <style>
     :root {
-      --primary: #0d9488;
-      --primary-dark: #0f766e;
-      --primary-light: #14b8a6;
-      --secondary: #6366f1;
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #818cf8;
+      --secondary: #8b5cf6;
       --accent: #ec4899;
       --fg: #1f2937;
       --fg-light: #6b7280;
@@ -71,7 +71,7 @@
     .hero {
       margin-top: 80px;
       padding: 5rem 2rem;
-      background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #6366f1 100%);
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #8b5cf6 100%);
       color: white;
       text-align: center;
       position: relative;
@@ -156,8 +156,8 @@
       <a href="/" class="logo">Muzaffer Karafil</a>
       <ul class="nav-menu">
         <li><a href="/" data-i18n="nav.home">Home</a></li>
-        <li><a href="/#projects" data-i18n="nav.projects">Projects</a></li>
         <li><a href="/#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="decision-ecosystem.html" data-i18n="nav.decisionEcosystem">Decision Ecosystem</a></li>
         <li><a href="about.html" data-i18n="nav.about">About</a></li>
         <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
@@ -248,31 +248,37 @@
           <h3>1. decision-schema</h3>
           <div class="io" data-i18n="decisionEcosystem.cores.schema.io">Definition → Used by all cores</div>
           <p data-i18n="decisionEcosystem.cores.schema.desc"></p>
+          <p style="margin-top:1rem;"><a href="core-decision-schema.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
         </div>
         <div class="card">
           <h3>2. mdm-engine</h3>
           <div class="io" data-i18n="decisionEcosystem.cores.mdm.io">Context + state → Proposal</div>
           <p data-i18n="decisionEcosystem.cores.mdm.desc"></p>
+          <p style="margin-top:1rem;"><a href="core-mdm-engine.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
         </div>
         <div class="card">
           <h3>3. decision-modulation-core</h3>
           <div class="io" data-i18n="decisionEcosystem.cores.dmc.io">Proposal + context → FinalDecision</div>
           <p data-i18n="decisionEcosystem.cores.dmc.desc"></p>
+          <p style="margin-top:1rem;"><a href="core-dmc.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
         </div>
         <div class="card">
           <h3>4. ops-health-core</h3>
           <div class="io" data-i18n="decisionEcosystem.cores.ops.io">OpsState → Health signal, kill-switch</div>
           <p data-i18n="decisionEcosystem.cores.ops.desc"></p>
+          <p style="margin-top:1rem;"><a href="core-ops-health.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
         </div>
         <div class="card">
           <h3>5. evaluation-calibration-core</h3>
           <div class="io" data-i18n="decisionEcosystem.cores.eval.io">PacketV2 traces → Metrics, invariants</div>
           <p data-i18n="decisionEcosystem.cores.eval.desc"></p>
+          <p style="margin-top:1rem;"><a href="core-eval-calibration.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
         </div>
         <div class="card">
           <h3>6. execution-orchestration-core</h3>
           <div class="io" data-i18n="decisionEcosystem.cores.exec.io">FinalDecision → Bounded execution</div>
           <p data-i18n="decisionEcosystem.cores.exec.desc"></p>
+          <p style="margin-top:1rem;"><a href="core-exec-orchestration.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
         </div>
       </div>
     </div>
