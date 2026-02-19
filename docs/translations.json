@@ -10,15 +10,24 @@
       "decisionEcosystem": "Decision Ecosystem"
     },
     "hero": {
-      "title": "Unreal Engine & Unity Plugin Developer",
-      "subtitle": "Game Engine Plugins and Mobile Development Expert",
-      "description": "I specialize in professional plugin development for Unreal Engine and Unity, performance optimization, and developer tools. I create solutions that optimize game developers' workflows.",
+      "title": "Unreal Engine & Decision Ecosystem",
+      "subtitle": "Game Engine Plugins · Domain-Agnostic Decision Stack",
+      "description": "Unreal Engine plugin development and Decision Ecosystem: contract-first, autonomous and AI-driven decision systems. Architecture, roadmap, and integration docs are on GitHub (wiki-style).",
       "ctaServices": "My Services",
-      "ctaContact": "Get In Touch"
+      "ctaContact": "Get In Touch",
+      "ctaEcosystem": "Decision Ecosystem →"
+    },
+    "home": {
+      "githubSource": {
+        "title": "Docs from GitHub",
+        "desc": "Architecture, roadmap, and integration guide live in GitHub repos (kept up to date like a wiki).",
+        "link": "GitHub Repos →",
+        "roadmap": "Roadmap page →"
+      }
     },
     "services": {
       "title": "My Services",
-      "subtitle": "Professional plugin development services for Unreal Engine and Unity",
+      "subtitle": "Unreal Engine plugins and Decision Ecosystem (docs on GitHub)",
       "unreal": {
         "title": "Unreal Engine Plugin",
         "description": "C++ and Blueprint-based plugin development for Unreal Engine. Editor tools, runtime systems, and performance optimizations.",
@@ -157,7 +166,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -455,6 +464,10 @@
           "import": "Import (Python)"
         },
         "note": "See each core repo for full API and docs. Start with decision-schema for types and contract."
+      },
+      "githubSection": {
+        "title": "Docs on GitHub (wiki-style)",
+        "desc": "Architecture, formulas, integration guide, and release notes live in the GitHub repos. Use them as the single source of truth; this page is a roadmap overview."
       }
     }
   },
@@ -469,15 +482,24 @@
       "decisionEcosystem": "Decision Ecosystem"
     },
     "hero": {
-      "title": "Unreal Engine & Unity Plugin Developer",
-      "subtitle": "Oyun Motoru Eklentileri ve Mobil Geliştirme Uzmanı",
-      "description": "Unreal Engine ve Unity için profesyonel plugin geliştirme, performans optimizasyonu ve geliştirici araçları konusunda uzmanım. Oyun geliştiricilerinin iş akışlarını optimize eden çözümler üretiyorum.",
+      "title": "Unreal Engine & Decision Ecosystem",
+      "subtitle": "Oyun motoru eklentileri · Alan bağımsız karar yığını",
+      "description": "Unreal Engine plugin geliştirme ve Decision Ecosystem: sözleşme öncelikli, otonom ve yapay zeka destekli karar sistemleri. Mimari, yol haritası ve entegrasyon dokümanları GitHub’ta (wiki gibi güncel).",
       "ctaServices": "Hizmetler",
-      "ctaContact": "İletişime Geç"
+      "ctaContact": "İletişime Geç",
+      "ctaEcosystem": "Decision Ecosystem →"
+    },
+    "home": {
+      "githubSource": {
+        "title": "Dokümanlar GitHub’tan",
+        "desc": "Mimari, yol haritası ve entegrasyon rehberi GitHub repo’larında (wiki gibi güncel).",
+        "link": "GitHub Repoları →",
+        "roadmap": "Yol haritası sayfası →"
+      }
     },
     "services": {
       "title": "Hizmetler",
-      "subtitle": "Unreal Engine ve Unity için profesyonel plugin geliştirme hizmetleri",
+      "subtitle": "Unreal Engine eklentileri ve Decision Ecosystem (dokümanlar GitHub’ta)",
       "unreal": {
         "title": "Unreal Engine Plugin",
         "description": "Unreal Engine için C++ ve Blueprint tabanlı plugin geliştirme. Editor tool'ları, runtime sistemleri ve performans optimizasyonları.",
@@ -616,7 +638,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -914,6 +936,10 @@
           "import": "Import (Python)"
         },
         "note": "Tam API ve dokümanlar için her çekirdek reposuna bakın. Tipler ve sözleşme için decision-schema ile başlayın."
+      },
+      "githubSection": {
+        "title": "Dokümanlar GitHub’ta (wiki gibi)",
+        "desc": "Mimari, formüller, entegrasyon rehberi ve sürüm notları GitHub repo’larında. Tek doğruluk kaynağı olarak kullanın; bu sayfa yol haritası özetidir."
       }
     }
   },
@@ -1060,7 +1086,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -1348,7 +1374,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -1636,7 +1662,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -1924,7 +1950,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -2212,7 +2238,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -2500,7 +2526,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -2788,7 +2814,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -3076,7 +3102,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -3364,7 +3390,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -3652,7 +3678,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -3940,7 +3966,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -4228,7 +4254,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -4516,7 +4542,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -4804,7 +4830,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -5092,7 +5118,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -5380,7 +5406,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -5668,7 +5694,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -5956,7 +5982,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -6244,7 +6270,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -6532,7 +6558,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -6820,7 +6846,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -7108,7 +7134,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -7396,7 +7422,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -7684,7 +7710,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -7972,7 +7998,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -8260,7 +8286,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -8548,7 +8574,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -8836,7 +8862,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -9124,7 +9150,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -9412,7 +9438,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -9700,7 +9726,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -9988,7 +10014,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -10276,7 +10302,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -10564,7 +10590,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -10852,7 +10878,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
@@ -11140,7 +11166,7 @@
       "email": "Email"
     },
     "footer": {
-      "text": "© {year} Muzaffer Karafil · Unreal Engine & Unity Plugin Developer"
+      "text": "© {year} Muzaffer Karafil · Unreal Engine & Decision Ecosystem"
     },
     "blueprintOutline": {
       "hero": {
