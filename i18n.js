@@ -175,13 +175,18 @@ class I18n {
       }
     });
 
-    // Update title
-    document.title = this.t('hero.title') + ' - Muzaffer Karafil';
+    // Update title (use page-specific title for decision-ecosystem)
+    const isEcosystemPage = window.location.pathname.includes('decision-ecosystem');
+    if (isEcosystemPage) {
+      document.title = this.t('decisionEcosystem.hero.title') + ' – Muzaffer Karafil';
+    } else {
+      document.title = this.t('hero.title') + ' - Muzaffer Karafil';
+    }
 
     // Update meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.content = this.t('hero.description');
+      metaDesc.content = isEcosystemPage ? this.t('decisionEcosystem.hero.subtitle') : this.t('hero.description');
     }
 
     // Update HTML lang attribute

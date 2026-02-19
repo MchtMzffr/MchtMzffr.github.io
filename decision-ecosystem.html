@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Decision Ecosystem – Roadmap &amp; Documentation</title>
+  <meta name="description" content="Domain-agnostic decision stack for autonomous and AI-driven systems. Cores, data flow, integration guide, and roadmap."/>
+  <link rel="canonical" href="https://mchtmzffr.github.io/decision-ecosystem.html"/>
+  <style>
+    :root {
+      --primary: #0d9488;
+      --primary-dark: #0f766e;
+      --primary-light: #14b8a6;
+      --secondary: #6366f1;
+      --accent: #ec4899;
+      --fg: #1f2937;
+      --fg-light: #6b7280;
+      --bg: #ffffff;
+      --bg-light: #f9fafb;
+      --bg-dark: #f3f4f6;
+      --border: #e5e7eb;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+      --radius: 12px;
+      --radius-lg: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--fg);
+      background: var(--bg);
+      font-size: 16px;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: var(--shadow);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-menu { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .nav-menu a { color: var(--fg); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .nav-menu a:hover { color: var(--primary); }
+    .language-selector { display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem; }
+    .language-selector select {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      color: var(--fg);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .hero {
+      margin-top: 80px;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #6366f1 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+    .hero .subtitle { font-size: 1.35rem; margin-bottom: 1.5rem; opacity: 0.95; }
+    .hero .description { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; line-height: 1.8; }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .toc a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .toc a:hover { background: rgba(255,255,255,0.35); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 4rem 0; }
+    .section:nth-child(even) { background: var(--bg-light); }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--fg); }
+    .section-subtitle { font-size: 1.1rem; color: var(--fg-light); margin-bottom: 2rem; max-width: 700px; }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+    .card:hover { box-shadow: var(--shadow-md); border-color: var(--primary-light); }
+    .card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--primary-dark); }
+    .card .io { font-size: 0.9rem; color: var(--fg-light); margin: 0.5rem 0; font-family: monospace; }
+    .card p { color: var(--fg); line-height: 1.7; }
+    .flow-diagram {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      overflow-x: auto;
+      white-space: pre;
+      margin: 1.5rem 0;
+    }
+    .code-block {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; }
+    th { background: var(--bg-light); font-weight: 600; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .footer { background: var(--fg); color: white; padding: 2.5rem 0; text-align: center; }
+    .footer p { opacity: 0.85; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .nav-menu { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">Muzaffer Karafil</a>
+      <ul class="nav-menu">
+        <li><a href="/" data-i18n="nav.home">Home</a></li>
+        <li><a href="/#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="language-selector">
+        <select id="language-selector">
+          <option value="tr">Türkçe</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="zh">中文</option>
+          <option value="ko">한국어</option>
+          <option value="ar">العربية</option>
+          <option value="nl">Nederlands</option>
+          <option value="sv">Svenska</option>
+          <option value="no">Norsk</option>
+          <option value="da">Dansk</option>
+          <option value="fi">Suomi</option>
+          <option value="pl">Polski</option>
+          <option value="cs">Čeština</option>
+          <option value="hu">Magyar</option>
+          <option value="ro">Română</option>
+          <option value="bg">Български</option>
+          <option value="el">Ελληνικά</option>
+          <option value="hr">Hrvatski</option>
+          <option value="sr">Српски</option>
+          <option value="sk">Slovenčina</option>
+          <option value="sl">Slovenščina</option>
+          <option value="uk">Українська</option>
+          <option value="et">Eesti</option>
+          <option value="lv">Latviešu</option>
+          <option value="lt">Lietuvių</option>
+          <option value="he">עברית</option>
+          <option value="th">ไทย</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="ms">Bahasa Melayu</option>
+          <option value="tl">Filipino</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 data-i18n="decisionEcosystem.hero.title">Decision Ecosystem</h1>
+      <p class="subtitle" data-i18n="decisionEcosystem.hero.subtitle">Domain-agnostic decision stack for autonomous and AI-driven systems</p>
+      <p class="description" data-i18n="decisionEcosystem.hero.description">
+        A contract-first set of independent cores: proposal generation, guards and modulation, operational health, evaluation and calibration, and optional execution orchestration. Navigate the roadmap below to understand what each part does and how to integrate them.
+      </p>
+      <nav class="toc" aria-label="Page sections">
+        <a href="#what"><span data-i18n="decisionEcosystem.toc.what">What it is</span></a>
+        <a href="#cores"><span data-i18n="decisionEcosystem.toc.cores">Cores</span></a>
+        <a href="#dataflow"><span data-i18n="decisionEcosystem.toc.dataflow">Data flow</span></a>
+        <a href="#standards"><span data-i18n="decisionEcosystem.toc.standards">Standards</span></a>
+        <a href="#roadmap"><span data-i18n="decisionEcosystem.toc.roadmap">Roadmap</span></a>
+        <a href="#examples"><span data-i18n="decisionEcosystem.toc.examples">Examples</span></a>
+        <a href="#integration"><span data-i18n="decisionEcosystem.toc.integration">Integration</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="what" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.what.title">What is the Decision Ecosystem?</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.what.subtitle">One-sentence summary and design principles</p>
+      <p data-i18n="decisionEcosystem.what.oneSentence" style="margin-bottom:1rem;"></p>
+      <ul style="margin-left:1.25rem; line-height:1.9;">
+        <li data-i18n="decisionEcosystem.what.principle1"></li>
+        <li data-i18n="decisionEcosystem.what.principle2"></li>
+        <li data-i18n="decisionEcosystem.what.principle3"></li>
+        <li data-i18n="decisionEcosystem.what.principle4"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cores" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.cores.title">The six cores</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.cores.subtitle">Each core has a single responsibility; they integrate only via the shared contract (decision-schema).</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>1. decision-schema</h3>
+          <div class="io" data-i18n="decisionEcosystem.cores.schema.io">Definition → Used by all cores</div>
+          <p data-i18n="decisionEcosystem.cores.schema.desc"></p>
+        </div>
+        <div class="card">
+          <h3>2. mdm-engine</h3>
+          <div class="io" data-i18n="decisionEcosystem.cores.mdm.io">Context + state → Proposal</div>
+          <p data-i18n="decisionEcosystem.cores.mdm.desc"></p>
+        </div>
+        <div class="card">
+          <h3>3. decision-modulation-core</h3>
+          <div class="io" data-i18n="decisionEcosystem.cores.dmc.io">Proposal + context → FinalDecision</div>
+          <p data-i18n="decisionEcosystem.cores.dmc.desc"></p>
+        </div>
+        <div class="card">
+          <h3>4. ops-health-core</h3>
+          <div class="io" data-i18n="decisionEcosystem.cores.ops.io">OpsState → Health signal, kill-switch</div>
+          <p data-i18n="decisionEcosystem.cores.ops.desc"></p>
+        </div>
+        <div class="card">
+          <h3>5. evaluation-calibration-core</h3>
+          <div class="io" data-i18n="decisionEcosystem.cores.eval.io">PacketV2 traces → Metrics, invariants</div>
+          <p data-i18n="decisionEcosystem.cores.eval.desc"></p>
+        </div>
+        <div class="card">
+          <h3>6. execution-orchestration-core</h3>
+          <div class="io" data-i18n="decisionEcosystem.cores.exec.io">FinalDecision → Bounded execution</div>
+          <p data-i18n="decisionEcosystem.cores.exec.desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dataflow" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.dataflow.title">Data flow</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.dataflow.subtitle">From context and state to execution and evaluation.</p>
+      <pre class="flow-diagram" data-i18n="decisionEcosystem.dataflow.diagram">Context + State
+    ↓
+[mdm-engine] → Proposal
+    ↓
+[decision-modulation-core] → FinalDecision
+    ↓
+[ops-health-core] → Safety override (if needed)
+    ↓
+[execution-orchestration-core] → Bounded execution (optional)
+    ↓
+Execution + Trace (PacketV2)
+    ↓
+[evaluation-calibration-core] → Metrics + Reports</pre>
+      <p data-i18n="decisionEcosystem.dataflow.note"></p>
+    </div>
+  </section>
+
+  <section id="standards" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.standards.title">Standards &amp; governance</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.standards.subtitle">Release notes, tags, branches, and contract matrix.</p>
+      <ul style="margin-left:1.25rem; line-height:1.9;">
+        <li data-i18n="decisionEcosystem.standards.item1"></li>
+        <li data-i18n="decisionEcosystem.standards.item2"></li>
+        <li data-i18n="decisionEcosystem.standards.item3"></li>
+        <li data-i18n="decisionEcosystem.standards.item4"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="roadmap" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.roadmap.title">Roadmap</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.roadmap.subtitle">Current priorities and next steps.</p>
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="decisionEcosystem.roadmap.table.priority">Priority</th>
+            <th data-i18n="decisionEcosystem.roadmap.table.item">Item</th>
+            <th data-i18n="decisionEcosystem.roadmap.table.description">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P0</td>
+            <td data-i18n="decisionEcosystem.roadmap.p0.item">Release alignment (tags)</td>
+            <td data-i18n="decisionEcosystem.roadmap.p0.desc">Match Git tags to pyproject versions for all cores.</td>
+          </tr>
+          <tr>
+            <td>P1</td>
+            <td data-i18n="decisionEcosystem.roadmap.p1.item">Ops latency windowing</td>
+            <td data-i18n="decisionEcosystem.roadmap.p1.desc">Timestamp-based latency pruning in ops-health-core.</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td data-i18n="decisionEcosystem.roadmap.p2.item">explainability-audit-core</td>
+            <td data-i18n="decisionEcosystem.roadmap.p2.desc">Explain why decisions were made (audit/compliance).</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td data-i18n="decisionEcosystem.roadmap.p2cli.item">decision-ecosystem-cli</td>
+            <td data-i18n="decisionEcosystem.roadmap.p2cli.desc">Single-command install, test, contract validation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="examples" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.examples.title">Examples</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.examples.subtitle">Minimal and full-stack integration patterns.</p>
+      <div class="card">
+        <h3 data-i18n="decisionEcosystem.examples.minimal.title">Minimal (single core)</h3>
+        <p data-i18n="decisionEcosystem.examples.minimal.desc"></p>
+        <pre class="code-block" data-i18n="decisionEcosystem.examples.minimal.code">from mdm_engine.mdm.decision_engine import DecisionEngine
+engine = DecisionEngine()
+proposal = engine.propose(context)  # Proposal from decision-schema</pre>
+      </div>
+      <div class="card">
+        <h3 data-i18n="decisionEcosystem.examples.fullstack.title">Full stack</h3>
+        <p data-i18n="decisionEcosystem.examples.fullstack.desc"></p>
+        <pre class="code-block" data-i18n="decisionEcosystem.examples.fullstack.code"># 1. Generate proposal (mdm-engine)
+# 2. Evaluate with guards (decision-modulation-core)
+# 3. Check health / kill-switch (ops-health-core)
+# 4. Execute (execution-orchestration-core or your code)
+# 5. Record trace as PacketV2 (evaluation-calibration-core)</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="integration" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.integration.title">Integration</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.integration.subtitle">Real API entry points (verified).</p>
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="decisionEcosystem.integration.table.core">Core</th>
+            <th data-i18n="decisionEcosystem.integration.table.import">Import (Python)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>mdm-engine</td><td><code>from mdm_engine.mdm.decision_engine import DecisionEngine</code></td></tr>
+          <tr><td>decision-modulation-core</td><td><code>from dmc_core.dmc.modulator import modulate</code></td></tr>
+          <tr><td>ops-health-core</td><td><code>from ops_health_core.kill_switch import update_kill_switch</code></td></tr>
+          <tr><td>evaluation-calibration-core</td><td><code>from eval_calibration_core.report.builder import build_report</code></td></tr>
+          <tr><td>execution-orchestration-core</td><td><code>from execution_orchestration_core.orchestrator import execute</code></td></tr>
+          <tr><td>integration-harness</td><td><code>from harness.run_one_step import run_one_step</code></td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:1.5rem;" data-i18n="decisionEcosystem.integration.note"></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer.text" data-i18n-html="true">© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Unity Plugin Developer</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

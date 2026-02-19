@@ -6,7 +6,8 @@
       "projects": "Projects",
       "about": "About",
       "experience": "Experience",
-      "contact": "Contact"
+      "contact": "Contact",
+      "decisionEcosystem": "Decision Ecosystem"
     },
     "hero": {
       "title": "Unreal Engine & Unity Plugin Developer",
@@ -42,6 +43,18 @@
           "Asset Pipeline Integration",
           "ScriptableObject Systems",
           "Build Pipeline Automation"
+        ]
+      },
+      "decisionEcosystem": {
+        "title": "Decision Ecosystem",
+        "description": "Domain-agnostic decision stack for autonomous and AI-driven systems. Contract-first cores: proposal generation, guards, operational health, evaluation, and execution orchestration. Full roadmap and integration guide.",
+        "viewDetails": "Roadmap &amp; Docs →",
+        "features": [
+          "Six independent cores (schema, mdm, dmc, ops-health, eval, exec)",
+          "Contract-first, fail-closed safety",
+          "Integration guide and real API imports",
+          "Release and tag governance",
+          "Examples and formulas"
         ]
       },
       "mobile": {
@@ -328,6 +341,121 @@
         "github": "GitHub",
         "contact": "Contact"
       }
+    },
+    "decisionEcosystem": {
+      "hero": {
+        "title": "Decision Ecosystem",
+        "subtitle": "Domain-agnostic decision stack for autonomous and AI-driven systems",
+        "description": "A contract-first set of independent cores: proposal generation, guards and modulation, operational health, evaluation and calibration, and optional execution orchestration. Navigate the roadmap below to understand what each part does and how to integrate them."
+      },
+      "toc": {
+        "what": "What it is",
+        "cores": "Cores",
+        "dataflow": "Data flow",
+        "standards": "Standards",
+        "roadmap": "Roadmap",
+        "examples": "Examples",
+        "integration": "Integration"
+      },
+      "what": {
+        "title": "What is the Decision Ecosystem?",
+        "subtitle": "One-sentence summary and design principles",
+        "oneSentence": "The Decision Ecosystem is a domain-agnostic, contract-first stack for autonomous and AI-driven decision systems. Six independent cores depend only on decision-schema and communicate via shared types (Proposal, FinalDecision, PacketV2).",
+        "principle1": "Contract-first: all cores depend only on decision-schema; no cross-core dependencies.",
+        "principle2": "Domain-agnostic: core vocabulary is universal (event, signal, state, proposal, decision).",
+        "principle3": "Fail-closed safety: guards are deterministic and ordered; safety violations trigger deny.",
+        "principle4": "Measurable guarantees: invariants are testable; compatibility checks ensure contract compliance."
+      },
+      "cores": {
+        "title": "The six cores",
+        "subtitle": "Each core has a single responsibility; they integrate only via the shared contract (decision-schema).",
+        "schema": {
+          "io": "Definition → Used by all cores",
+          "desc": "Single Source of Truth (SSOT): defines types Proposal, FinalDecision, PacketV2 and trace keys. No runtime logic—pure contract."
+        },
+        "mdm": {
+          "io": "Context + state → Proposal",
+          "desc": "Proposal generation: answers \"What should we do?\" Produces Proposal (action, confidence, reasons) from context and state."
+        },
+        "dmc": {
+          "io": "Proposal + context → FinalDecision",
+          "desc": "Guards and modulation: \"Should we do it?\" Applies ordered guards; fail-closed on violation. Outputs FinalDecision and MismatchInfo."
+        },
+        "ops": {
+          "io": "OpsState → Health signal, kill-switch",
+          "desc": "Operational health: penalty score, RED state → deny actions. Monitors health and can override decisions (kill-switch)."
+        },
+        "eval": {
+          "io": "PacketV2 traces → Metrics, invariants",
+          "desc": "Evidence generation: computes metrics and invariant checks from traces; calibration and reports."
+        },
+        "exec": {
+          "io": "FinalDecision → Bounded execution",
+          "desc": "Optional: executes FinalDecision with retries, timeouts, idempotency; fail-closed on exceptions; secret redaction."
+        }
+      },
+      "dataflow": {
+        "title": "Data flow",
+        "subtitle": "From context and state to execution and evaluation.",
+        "diagram": "Context + State\n    ↓\n[mdm-engine] → Proposal\n    ↓\n[decision-modulation-core] → FinalDecision\n    ↓\n[ops-health-core] → Safety override (if needed)\n    ↓\n[execution-orchestration-core] → Bounded execution (optional)\n    ↓\nExecution + Trace (PacketV2)\n    ↓\n[evaluation-calibration-core] → Metrics + Reports",
+        "note": "Guards and ops-health can override or deny at any step. Traces are recorded for evaluation and calibration."
+      },
+      "standards": {
+        "title": "Standards & governance",
+        "subtitle": "Release notes, tags, branches, and contract matrix.",
+        "item1": "Release notes: fixed section order (Summary, Compatibility, Security, Changes, Verification, Links); INV-REL-*.",
+        "item2": "Tag governance: tags are immutable; version must match pyproject.",
+        "item3": "Branch governance: main for release; dev/CI fallback (INV-GOV-1, INV-GOV-2).",
+        "item4": "Ecosystem contract matrix: dependency ranges and CI fallback tags for reproducibility."
+      },
+      "roadmap": {
+        "title": "Roadmap",
+        "subtitle": "Current priorities and next steps.",
+        "table": {
+          "priority": "Priority",
+          "item": "Item",
+          "description": "Description"
+        },
+        "p0": {
+          "item": "Release alignment (tags)",
+          "desc": "Match Git tags to pyproject versions for all cores."
+        },
+        "p1": {
+          "item": "Ops latency windowing",
+          "desc": "Timestamp-based latency pruning in ops-health-core."
+        },
+        "p2": {
+          "item": "explainability-audit-core",
+          "desc": "Explain why decisions were made (audit/compliance)."
+        },
+        "p2cli": {
+          "item": "decision-ecosystem-cli",
+          "desc": "Single-command install, test, contract validation."
+        }
+      },
+      "examples": {
+        "title": "Examples",
+        "subtitle": "Minimal and full-stack integration patterns.",
+        "minimal": {
+          "title": "Minimal (single core)",
+          "desc": "Using only mdm-engine to generate a Proposal from context.",
+          "code": "from mdm_engine.mdm.decision_engine import DecisionEngine\nengine = DecisionEngine()\nproposal = engine.propose(context)  # Proposal from decision-schema"
+        },
+        "fullstack": {
+          "title": "Full stack",
+          "desc": "Proposal → guards → health check → execute → record trace.",
+          "code": "# 1. Generate proposal (mdm-engine)\n# 2. Evaluate with guards (decision-modulation-core)\n# 3. Check health / kill-switch (ops-health-core)\n# 4. Execute (execution-orchestration-core or your code)\n# 5. Record trace as PacketV2 (evaluation-calibration-core)"
+        }
+      },
+      "integration": {
+        "title": "Integration",
+        "subtitle": "Real API entry points (verified).",
+        "table": {
+          "core": "Core",
+          "import": "Import (Python)"
+        },
+        "note": "See each core repo for full API and docs. Start with decision-schema for types and contract."
+      }
     }
   },
   "tr": {
@@ -337,7 +465,8 @@
       "projects": "Projeler",
       "about": "Hakkımda",
       "experience": "Deneyim",
-      "contact": "İletişim"
+      "contact": "İletişim",
+      "decisionEcosystem": "Decision Ecosystem"
     },
     "hero": {
       "title": "Unreal Engine & Unity Plugin Developer",
@@ -373,6 +502,18 @@
           "Asset Pipeline Integration",
           "ScriptableObject Systems",
           "Build Pipeline Automation"
+        ]
+      },
+      "decisionEcosystem": {
+        "title": "Decision Ecosystem",
+        "description": "Otonom ve yapay zeka destekli sistemler için alan bağımsız karar yığını. Sözleşme öncelikli çekirdekler: öneri üretimi, gardiyanlar, operasyonel sağlık, değerlendirme ve yürütme orkestrasyonu. Tam yol haritası ve entegrasyon rehberi.",
+        "viewDetails": "Yol Haritası ve Dokümanlar →",
+        "features": [
+          "Altı bağımsız çekirdek (schema, mdm, dmc, ops-health, eval, exec)",
+          "Sözleşme öncelikli, kapalı devre güvenlik",
+          "Entegrasyon rehberi ve gerçek API import'ları",
+          "Sürüm ve etiket yönetişimi",
+          "Örnekler ve formüller"
         ]
       },
       "mobile": {
@@ -658,6 +799,121 @@
         "fab": "FAB Asset Store",
         "github": "GitHub",
         "contact": "İletişim"
+      }
+    },
+    "decisionEcosystem": {
+      "hero": {
+        "title": "Decision Ecosystem",
+        "subtitle": "Otonom ve yapay zeka destekli sistemler için alan bağımsız karar yığını",
+        "description": "Sözleşme öncelikli, bağımsız çekirdekler: öneri üretimi, gardiyanlar ve modülasyon, operasyonel sağlık, değerlendirme ve kalibrasyon, isteğe bağlı yürütme orkestrasyonu. Her parçanın ne işe yaradığını ve nasıl entegre edileceğini anlamak için aşağıdaki yol haritasında gezinin."
+      },
+      "toc": {
+        "what": "Nedir",
+        "cores": "Çekirdekler",
+        "dataflow": "Veri akışı",
+        "standards": "Standartlar",
+        "roadmap": "Yol haritası",
+        "examples": "Örnekler",
+        "integration": "Entegrasyon"
+      },
+      "what": {
+        "title": "Decision Ecosystem nedir?",
+        "subtitle": "Tek cümle özet ve tasarım ilkeleri",
+        "oneSentence": "Decision Ecosystem, otonom ve yapay zeka destekli karar sistemleri için alan bağımsız, sözleşme öncelikli bir yığındır. Altı bağımsız çekirdek yalnızca decision-schema'ya bağlıdır ve ortak tipler (Proposal, FinalDecision, PacketV2) ile iletişim kurar.",
+        "principle1": "Sözleşme öncelikli: tüm çekirdekler yalnızca decision-schema'ya bağlıdır; çekirdekler arası bağımlılık yoktur.",
+        "principle2": "Alan bağımsız: çekirdek sözcük dağarcığı evrenseldir (event, signal, state, proposal, decision).",
+        "principle3": "Kapalı devre güvenlik: gardiyanlar belirleyici ve sıralıdır; güvenlik ihlali red ile sonuçlanır.",
+        "principle4": "Ölçülebilir garantiler: değişmezler test edilebilir; uyumluluk kontrolleri sözleşmeye uyumu sağlar."
+      },
+      "cores": {
+        "title": "Altı çekirdek",
+        "subtitle": "Her çekirdeğin tek sorumluluğu vardır; yalnızca ortak sözleşme (decision-schema) ile entegre olurlar.",
+        "schema": {
+          "io": "Tanım → Tüm çekirdekler tarafından kullanılır",
+          "desc": "Tek doğruluk kaynağı (SSOT): Proposal, FinalDecision, PacketV2 tiplerini ve trace anahtarlarını tanımlar. Çalışma zamanı mantığı yok—saf sözleşme."
+        },
+        "mdm": {
+          "io": "Bağlam + state → Proposal",
+          "desc": "Öneri üretimi: \"Ne yapmalıyız?\" sorusuna cevap verir. Bağlam ve state'ten Proposal (action, confidence, reasons) üretir."
+        },
+        "dmc": {
+          "io": "Proposal + bağlam → FinalDecision",
+          "desc": "Gardiyanlar ve modülasyon: \"Yapalım mı?\" Sıralı gardiyanları uygular; ihlalde kapalı devre. FinalDecision ve MismatchInfo çıktıları."
+        },
+        "ops": {
+          "io": "OpsState → Sağlık sinyali, kill-switch",
+          "desc": "Operasyonel sağlık: ceza puanı, RED durumu → aksiyonları reddet. Sağlığı izler ve kararları geçersiz kılabilir (kill-switch)."
+        },
+        "eval": {
+          "io": "PacketV2 trace'leri → Metrikler, değişmezler",
+          "desc": "Kanıt üretimi: trace'lerden metrik ve değişmez kontrolleri hesaplar; kalibrasyon ve raporlar."
+        },
+        "exec": {
+          "io": "FinalDecision → Sınırlı yürütme",
+          "desc": "İsteğe bağlı: FinalDecision'ı yeniden denemeler, zaman aşımları, idempotency ile yürütür; istisnalarda kapalı devre; gizlilik maskeleme."
+        }
+      },
+      "dataflow": {
+        "title": "Veri akışı",
+        "subtitle": "Bağlam ve state'ten yürütme ve değerlendirmeye.",
+        "diagram": "Context + State\n    ↓\n[mdm-engine] → Proposal\n    ↓\n[decision-modulation-core] → FinalDecision\n    ↓\n[ops-health-core] → Güvenlik geçersiz kılma (gerekirse)\n    ↓\n[execution-orchestration-core] → Sınırlı yürütme (isteğe bağlı)\n    ↓\nYürütme + Trace (PacketV2)\n    ↓\n[evaluation-calibration-core] → Metrikler + Raporlar",
+        "note": "Gardiyanlar ve ops-health her adımda geçersiz kılabilir veya reddedebilir. Trace'ler değerlendirme ve kalibrasyon için kaydedilir."
+      },
+      "standards": {
+        "title": "Standartlar ve yönetişim",
+        "subtitle": "Sürüm notları, etiketler, dallar ve sözleşme matrisi.",
+        "item1": "Sürüm notları: sabit bölüm sırası (Özet, Uyumluluk, Güvenlik, Değişiklikler, Doğrulama, Bağlantılar); INV-REL-*.",
+        "item2": "Etiket yönetişimi: etiketler değiştirilemez; sürüm pyproject ile eşleşmeli.",
+        "item3": "Dal yönetişimi: sürüm için main; dev/CI yedek (INV-GOV-1, INV-GOV-2).",
+        "item4": "Ekosistem sözleşme matrisi: bağımlılık aralıkları ve tekrarlanabilirlik için CI yedek etiketleri."
+      },
+      "roadmap": {
+        "title": "Yol haritası",
+        "subtitle": "Güncel öncelikler ve sonraki adımlar.",
+        "table": {
+          "priority": "Öncelik",
+          "item": "Madde",
+          "description": "Açıklama"
+        },
+        "p0": {
+          "item": "Sürüm hizalaması (etiketler)",
+          "desc": "Tüm çekirdekler için Git etiketlerini pyproject sürümleriyle eşleştir."
+        },
+        "p1": {
+          "item": "Ops gecikme penceresi",
+          "desc": "ops-health-core'da zaman damgalı gecikme budama."
+        },
+        "p2": {
+          "item": "explainability-audit-core",
+          "desc": "Kararların neden verildiğini açıkla (denetim/uyumluluk)."
+        },
+        "p2cli": {
+          "item": "decision-ecosystem-cli",
+          "desc": "Tek komutla kurulum, test, sözleşme doğrulama."
+        }
+      },
+      "examples": {
+        "title": "Örnekler",
+        "subtitle": "Minimal ve tam yığın entegrasyon kalıpları.",
+        "minimal": {
+          "title": "Minimal (tek çekirdek)",
+          "desc": "Yalnızca mdm-engine ile bağlamdan Proposal üretmek.",
+          "code": "from mdm_engine.mdm.decision_engine import DecisionEngine\nengine = DecisionEngine()\nproposal = engine.propose(context)  # decision-schema'dan Proposal"
+        },
+        "fullstack": {
+          "title": "Tam yığın",
+          "desc": "Proposal → gardiyanlar → sağlık kontrolü → yürüt → trace kaydet.",
+          "code": "# 1. Öneri üret (mdm-engine)\n# 2. Gardiyanlarla değerlendir (decision-modulation-core)\n# 3. Sağlık / kill-switch kontrolü (ops-health-core)\n# 4. Yürüt (execution-orchestration-core veya kendi kodun)\n# 5. Trace'i PacketV2 olarak kaydet (evaluation-calibration-core)"
+        }
+      },
+      "integration": {
+        "title": "Entegrasyon",
+        "subtitle": "Gerçek API giriş noktaları (doğrulanmış).",
+        "table": {
+          "core": "Çekirdek",
+          "import": "Import (Python)"
+        },
+        "note": "Tam API ve dokümanlar için her çekirdek reposuna bakın. Tipler ve sözleşme için decision-schema ile başlayın."
       }
     }
   },
