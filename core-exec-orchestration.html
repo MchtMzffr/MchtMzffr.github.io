@@ -44,16 +44,16 @@
     </div>
   </nav>
   <main class="container section">
-    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
-    <h1 class="page-title">execution-orchestration-core</h1>
-    <p><strong>Source: GitHub repo.</strong> Domain-agnostic execution orchestration for FinalDecision; bounded, fail-closed, kill-switch compliant.</p>
-    <h2>Main API</h2>
-    <p><code>execute(FinalDecision, context, policy, executor) -> ExecutionReport</code> — Retry/timeout/idempotency; kill-switch compliance; exceptions → fail-closed; execution report.</p>
-    <h2>Policies</h2>
-    <p>RetryPolicy (backoff, max retries), TimeoutPolicy, IdempotencyPolicy, ExecutionPolicy. All bounded.</p>
-    <h2>Models</h2>
-    <p>ExecutionStatus, ExecutionAttempt, ExecutionPlan, ExecutionReport. Redaction for secrets; trace keys in PacketV2.external (exec.*).</p>
-    <h2>Execution flow</h2>
+    <a href="decision-ecosystem.html" class="back-link" data-i18n="coreDetail.backToEcosystem">← Decision Ecosystem</a>
+    <h1 class="page-title" data-i18n="coreDetail.exec.title">execution-orchestration-core</h1>
+    <p><strong data-i18n="coreDetail.sourceFromRepoShort">Source: GitHub repo.</strong> <span data-i18n="coreDetail.exec.sourceNote">Domain-agnostic execution orchestration for FinalDecision; bounded, fail-closed, kill-switch compliant.</span></p>
+    <h2 data-i18n="coreDetail.exec.mainApiTitle">Main API</h2>
+    <p data-i18n="coreDetail.exec.mainApiP"><code>execute(FinalDecision, context, policy, executor) -> ExecutionReport</code> — Retry/timeout/idempotency; kill-switch compliance; exceptions → fail-closed; execution report.</p>
+    <h2 data-i18n="coreDetail.exec.policiesTitle">Policies</h2>
+    <p data-i18n="coreDetail.exec.policiesP">RetryPolicy (backoff, max retries), TimeoutPolicy, IdempotencyPolicy, ExecutionPolicy. All bounded.</p>
+    <h2 data-i18n="coreDetail.exec.modelsTitle">Models</h2>
+    <p data-i18n="coreDetail.exec.modelsP">ExecutionStatus, ExecutionAttempt, ExecutionPlan, ExecutionReport. Redaction for secrets; trace keys in PacketV2.external (exec.*).</p>
+    <h2 data-i18n="coreDetail.exec.flowTitle">Execution flow</h2>
     <pre class="code-block">FinalDecision + Context + Policy + Executor
   -> Kill-switch check -> Deny if active
   -> Allowed check -> Skip if not allowed
@@ -61,7 +61,7 @@
   -> Execute with retry/timeout (bounded)
   -> Fail-closed on exceptions
   -> ExecutionReport -> PacketV2.external</pre>
-    <h2>Import</h2>
+    <h2 data-i18n="coreDetail.exec.importTitle">Import</h2>
     <pre class="code-block">from execution_orchestration_core.orchestrator import execute</pre>
   </main>
   <footer class="footer"><div class="container"><p>© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Decision Ecosystem</p></div></footer>

@@ -47,17 +47,17 @@
   </nav>
 
   <main class="container section">
-    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
-    <h1 class="page-title">evaluation-calibration-core</h1>
-    <p><strong>Source: GitHub repo (ARCHITECTURE.md).</strong> Evidence artifacts from <code>PacketV2</code> traces.</p>
+    <a href="decision-ecosystem.html" class="back-link" data-i18n="coreDetail.backToEcosystem">← Decision Ecosystem</a>
+    <h1 class="page-title" data-i18n="coreDetail.eval.title">evaluation-calibration-core</h1>
+    <p data-i18n="coreDetail.eval.sourceNoteArch"><strong>Source: GitHub repo (ARCHITECTURE.md).</strong> Evidence artifacts from <code>PacketV2</code> traces.</p>
 
-    <h2>Data flow</h2>
+    <h2 data-i18n="coreDetail.eval.dataFlowTitle">Data flow</h2>
     <pre class="code-block">PacketV2 traces -> read_packets() -> compute_metrics() -> build_report() -> Report</pre>
 
-    <h2>Metrics computation</h2>
-    <p>From <code>PacketV2</code> traces: action distribution, guard trigger rates, latency percentiles, invariant pass rates.</p>
+    <h2 data-i18n="coreDetail.eval.metricsTitle">Metrics computation</h2>
+    <p data-i18n="coreDetail.eval.metricsP">From <code>PacketV2</code> traces: action distribution, guard trigger rates, latency percentiles, invariant pass rates.</p>
 
-    <h2>Invariant checks</h2>
+    <h2 data-i18n="coreDetail.eval.invariantTitle">Invariant checks</h2>
     <ul>
       <li>Contract closure: Proposal.action and FinalDecision.action in Action enum</li>
       <li>Confidence clamp: Proposal.confidence in [0,1]</li>
@@ -65,14 +65,14 @@
       <li>Packet version: PacketV2.schema_version present</li>
     </ul>
 
-    <h2>Contracts</h2>
+    <h2 data-i18n="coreDetail.eval.contractsTitle">Contracts</h2>
     <ul>
       <li><strong>Input:</strong> PacketV2 traces (e.g. JSONL)</li>
       <li><strong>Output:</strong> Metrics dict, Report (JSON + Markdown)</li>
       <li>Uses <code>decision_schema.packet_v2.PacketV2</code></li>
     </ul>
 
-    <h2>Components</h2>
+    <h2 data-i18n="coreDetail.eval.componentsTitle">Components</h2>
     <h3>1. Packet Reader (<code>eval_calibration_core/io/packet_reader.py</code>)</h3>
     <p><strong>Class:</strong> <code>PacketReader</code> — Reads PacketV2 from JSONL; validates schema compatibility.</p>
 
@@ -89,7 +89,7 @@
       <li><strong>Schema validation:</strong> Reject incompatible PacketV2 versions</li>
     </ul>
 
-    <h2>Import</h2>
+    <h2 data-i18n="coreDetail.eval.importTitle">Import</h2>
     <pre class="code-block">from eval_calibration_core.report.builder import build_report</pre>
   </main>
 

@@ -113,6 +113,8 @@
       transition: all 0.3s;
     }
     .card:hover { box-shadow: var(--shadow-md); border-color: var(--primary-light); }
+    .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
+    .card-link:hover .card { box-shadow: var(--shadow-md); border-color: var(--primary-light); }
     .card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--primary-dark); }
     .card .io { font-size: 0.9rem; color: var(--fg-light); margin: 0.5rem 0; font-family: monospace; }
     .card p { color: var(--fg); line-height: 1.7; }
@@ -244,42 +246,48 @@
       <h2 class="section-title" data-i18n="decisionEcosystem.cores.title">The six cores</h2>
       <p class="section-subtitle" data-i18n="decisionEcosystem.cores.subtitle">Each core has a single responsibility; they integrate only via the shared contract (decision-schema).</p>
       <div class="grid-2">
-        <div class="card">
-          <h3>1. decision-schema</h3>
-          <div class="io" data-i18n="decisionEcosystem.cores.schema.io">Definition → Used by all cores</div>
-          <p data-i18n="decisionEcosystem.cores.schema.desc"></p>
-          <p style="margin-top:1rem;"><a href="core-decision-schema.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
-        </div>
-        <div class="card">
-          <h3>2. mdm-engine</h3>
-          <div class="io" data-i18n="decisionEcosystem.cores.mdm.io">Context + state → Proposal</div>
-          <p data-i18n="decisionEcosystem.cores.mdm.desc"></p>
-          <p style="margin-top:1rem;"><a href="core-mdm-engine.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
-        </div>
-        <div class="card">
-          <h3>3. decision-modulation-core</h3>
-          <div class="io" data-i18n="decisionEcosystem.cores.dmc.io">Proposal + context → FinalDecision</div>
-          <p data-i18n="decisionEcosystem.cores.dmc.desc"></p>
-          <p style="margin-top:1rem;"><a href="core-dmc.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
-        </div>
-        <div class="card">
-          <h3>4. ops-health-core</h3>
-          <div class="io" data-i18n="decisionEcosystem.cores.ops.io">OpsState → Health signal, kill-switch</div>
-          <p data-i18n="decisionEcosystem.cores.ops.desc"></p>
-          <p style="margin-top:1rem;"><a href="core-ops-health.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
-        </div>
-        <div class="card">
-          <h3>5. evaluation-calibration-core</h3>
-          <div class="io" data-i18n="decisionEcosystem.cores.eval.io">PacketV2 traces → Metrics, invariants</div>
-          <p data-i18n="decisionEcosystem.cores.eval.desc"></p>
-          <p style="margin-top:1rem;"><a href="core-eval-calibration.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
-        </div>
-        <div class="card">
-          <h3>6. execution-orchestration-core</h3>
-          <div class="io" data-i18n="decisionEcosystem.cores.exec.io">FinalDecision → Bounded execution</div>
-          <p data-i18n="decisionEcosystem.cores.exec.desc"></p>
-          <p style="margin-top:1rem;"><a href="core-exec-orchestration.html" style="color:var(--primary); font-weight:600;">→ Detail (from repo)</a></p>
-        </div>
+        <a href="core-decision-schema.html" class="card-link">
+          <div class="card">
+            <h3>1. decision-schema</h3>
+            <div class="io" data-i18n="decisionEcosystem.cores.schema.io">Definition → Used by all cores</div>
+            <p data-i18n="decisionEcosystem.cores.schema.desc"></p>
+          </div>
+        </a>
+        <a href="core-mdm-engine.html" class="card-link">
+          <div class="card">
+            <h3>2. mdm-engine</h3>
+            <div class="io" data-i18n="decisionEcosystem.cores.mdm.io">Context + state → Proposal</div>
+            <p data-i18n="decisionEcosystem.cores.mdm.desc"></p>
+          </div>
+        </a>
+        <a href="core-dmc.html" class="card-link">
+          <div class="card">
+            <h3>3. decision-modulation-core</h3>
+            <div class="io" data-i18n="decisionEcosystem.cores.dmc.io">Proposal + context → FinalDecision</div>
+            <p data-i18n="decisionEcosystem.cores.dmc.desc"></p>
+          </div>
+        </a>
+        <a href="core-ops-health.html" class="card-link">
+          <div class="card">
+            <h3>4. ops-health-core</h3>
+            <div class="io" data-i18n="decisionEcosystem.cores.ops.io">OpsState → Health signal, kill-switch</div>
+            <p data-i18n="decisionEcosystem.cores.ops.desc"></p>
+          </div>
+        </a>
+        <a href="core-eval-calibration.html" class="card-link">
+          <div class="card">
+            <h3>5. evaluation-calibration-core</h3>
+            <div class="io" data-i18n="decisionEcosystem.cores.eval.io">PacketV2 traces → Metrics, invariants</div>
+            <p data-i18n="decisionEcosystem.cores.eval.desc"></p>
+          </div>
+        </a>
+        <a href="core-exec-orchestration.html" class="card-link">
+          <div class="card">
+            <h3>6. execution-orchestration-core</h3>
+            <div class="io" data-i18n="decisionEcosystem.cores.exec.io">FinalDecision → Bounded execution</div>
+            <p data-i18n="decisionEcosystem.cores.exec.desc"></p>
+          </div>
+        </a>
       </div>
     </div>
   </section>

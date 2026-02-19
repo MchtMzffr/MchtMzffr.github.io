@@ -44,21 +44,21 @@
     </div>
   </nav>
   <main class="container section">
-    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
-    <h1 class="page-title">mdm-engine</h1>
-    <p><strong>Source: GitHub repo.</strong> Proposal generation runtime; produces Proposal from state/context.</p>
-    <h2>Role</h2>
-    <p>Proposal generation core. Data flow: (state, context) → propose() → Proposal → PacketV2.</p>
-    <h2>Components</h2>
-    <h3>Proposal Generation</h3>
-    <p>propose(features, context) → Proposal. Generic feature dict, confidence, decision-schema conforming.</p>
-    <h3>Feature Extraction</h3>
-    <p>build_features(event, history, ...) → dict. Domain-agnostic.</p>
-    <h3>Event Loop</h3>
-    <p>run_loop(source, executor, ...) — event → features → proposal → modulation → execution → trace; emits PacketV2.</p>
-    <h3>Private Hook</h3>
-    <p>mdm_engine/mdm/_private/model.py: compute_proposal_private(features, **kwargs) → Proposal.</p>
-    <h2>Import</h2>
+    <a href="decision-ecosystem.html" class="back-link" data-i18n="coreDetail.backToEcosystem">← Decision Ecosystem</a>
+    <h1 class="page-title" data-i18n="coreDetail.mdm.title">mdm-engine</h1>
+    <p><strong data-i18n="coreDetail.sourceFromRepoShort">Source: GitHub repo.</strong> <span data-i18n="coreDetail.mdm.sourceNote">Proposal generation runtime; produces Proposal from state/context.</span></p>
+    <h2 data-i18n="coreDetail.mdm.roleTitle">Role</h2>
+    <p data-i18n="coreDetail.mdm.roleP">Proposal generation core. Data flow: (state, context) → propose() → Proposal → PacketV2.</p>
+    <h2 data-i18n="coreDetail.mdm.componentsTitle">Components</h2>
+    <h3 data-i18n="coreDetail.mdm.proposalTitle">Proposal Generation</h3>
+    <p data-i18n="coreDetail.mdm.proposalP">propose(features, context) → Proposal. Generic feature dict, confidence, decision-schema conforming.</p>
+    <h3 data-i18n="coreDetail.mdm.featureTitle">Feature Extraction</h3>
+    <p data-i18n="coreDetail.mdm.featureP">build_features(event, history, ...) → dict. Domain-agnostic.</p>
+    <h3 data-i18n="coreDetail.mdm.eventLoopTitle">Event Loop</h3>
+    <p data-i18n="coreDetail.mdm.eventLoopP">run_loop(source, executor, ...) — event → features → proposal → modulation → execution → trace; emits PacketV2.</p>
+    <h3 data-i18n="coreDetail.mdm.privateHookTitle">Private Hook</h3>
+    <p data-i18n="coreDetail.mdm.privateHookP">mdm_engine/mdm/_private/model.py: compute_proposal_private(features, **kwargs) → Proposal.</p>
+    <h2 data-i18n="coreDetail.mdm.importTitle">Import</h2>
     <pre class="code-block">from mdm_engine.mdm.decision_engine import DecisionEngine</pre>
   </main>
   <footer class="footer"><div class="container"><p>© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Decision Ecosystem</p></div></footer>

@@ -44,18 +44,18 @@
     </div>
   </nav>
   <main class="container section">
-    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
-    <h1 class="page-title">ops-health-core</h1>
-    <p><strong>Source: GitHub repo.</strong> Operational safety signals and kill-switch.</p>
-    <h2>Data flow</h2>
+    <a href="decision-ecosystem.html" class="back-link" data-i18n="coreDetail.backToEcosystem">← Decision Ecosystem</a>
+    <h1 class="page-title" data-i18n="coreDetail.ops.title">ops-health-core</h1>
+    <p><strong data-i18n="coreDetail.sourceFromRepoShort">Source: GitHub repo.</strong> <span data-i18n="coreDetail.ops.sourceNote">Operational safety signals and kill-switch.</span></p>
+    <h2 data-i18n="coreDetail.ops.dataFlowTitle">Data flow</h2>
     <pre class="code-block">Events -> OpsState -> update_kill_switch() -> KillSwitchSignal -> context</pre>
-    <h2>Health score</h2>
-    <p>From: error rate, rate-limit frequency, reconnect frequency, latency percentiles. When RED: cooldown_until_ms, deny_actions=True, recommended_action=HOLD.</p>
-    <h2>Components</h2>
-    <p>Kill Switch: update_kill_switch(state, policy, now_ms). OpsState: timestamps, sliding windows. OpsPolicy: thresholds, cooldown.</p>
-    <h2>Safety</h2>
-    <p>Fail-closed on errors; deterministic; non-invasive (context only).</p>
-    <h2>Import</h2>
+    <h2 data-i18n="coreDetail.ops.healthScoreTitle">Health score</h2>
+    <p data-i18n="coreDetail.ops.healthScoreP">From: error rate, rate-limit frequency, reconnect frequency, latency percentiles. When RED: cooldown_until_ms, deny_actions=True, recommended_action=HOLD.</p>
+    <h2 data-i18n="coreDetail.ops.componentsTitle">Components</h2>
+    <p data-i18n="coreDetail.ops.componentsP">Kill Switch: update_kill_switch(state, policy, now_ms). OpsState: timestamps, sliding windows. OpsPolicy: thresholds, cooldown.</p>
+    <h2 data-i18n="coreDetail.ops.safetyTitle">Safety</h2>
+    <p data-i18n="coreDetail.ops.safetyP">Fail-closed on errors; deterministic; non-invasive (context only).</p>
+    <h2 data-i18n="coreDetail.ops.importTitle">Import</h2>
     <pre class="code-block">from ops_health_core.kill_switch import update_kill_switch</pre>
   </main>
   <footer class="footer"><div class="container"><p>© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Decision Ecosystem</p></div></footer>

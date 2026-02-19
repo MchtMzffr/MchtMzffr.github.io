@@ -88,15 +88,15 @@
   </nav>
 
   <main class="container section">
-    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
-    <h1 class="page-title">decision-schema</h1>
-    <p><strong>Source: GitHub repo (ARCHITECTURE.md + README).</strong> Single Source of Truth (SSOT) for contracts in the multi-core decision ecosystem.</p>
+    <a href="decision-ecosystem.html" class="back-link" data-i18n="coreDetail.backToEcosystem">← Decision Ecosystem</a>
+    <h1 class="page-title" data-i18n="coreDetail.schema.title">decision-schema</h1>
+    <p><strong data-i18n="coreDetail.sourceFromRepo">Source: GitHub repo (ARCHITECTURE.md + README).</strong> <span data-i18n="coreDetail.schema.sourceNote">Single Source of Truth (SSOT) for contracts in the multi-core decision ecosystem.</span></p>
 
-    <h2>Purpose</h2>
-    <p><strong>Decision Schema</strong> is the Single Source of Truth (SSOT) for contracts in the multi-core decision ecosystem. It provides shared types and contracts that all decision cores depend on.</p>
+    <h2 data-i18n="coreDetail.schema.purposeTitle">Purpose</h2>
+    <p data-i18n="coreDetail.schema.purpose">Decision Schema is the Single Source of Truth (SSOT) for contracts in the multi-core decision ecosystem. It provides shared types and contracts that all decision cores depend on.</p>
 
-    <h2>Core Components</h2>
-    <h3>Types (<code>decision_schema/types.py</code>)</h3>
+    <h2 data-i18n="coreDetail.schema.componentsTitle">Core Components</h2>
+    <h3 data-i18n="coreDetail.schema.typesTitle">Types (decision_schema/types.py)</h3>
     <ul>
       <li><strong><code>Action</code></strong>: Generic action enum (HOLD, ACT, EXIT, CANCEL, STOP)</li>
       <li><strong><code>Proposal</code></strong>: MDM output (action, confidence, reasons, params dict)</li>
@@ -104,30 +104,30 @@
       <li><strong><code>MismatchInfo</code></strong>: Guard failure flags and reason codes</li>
     </ul>
 
-    <h3>Packet (<code>decision_schema/packet_v2.py</code>)</h3>
+    <h3 data-i18n="coreDetail.schema.packetTitle">Packet (decision_schema/packet_v2.py)</h3>
     <ul>
       <li><strong><code>PacketV2</code></strong>: End-to-end tracing packet — <code>packet_version</code>, <code>schema_version</code>; fields: <code>run_id</code>, <code>step</code>, <code>input</code>, <code>external</code>, <code>mdm</code>, <code>final_action</code>, <code>latency_ms</code>, <code>mismatch</code></li>
     </ul>
 
-    <h3>Compatibility (<code>decision_schema/compat.py</code>)</h3>
+    <h3 data-i18n="coreDetail.schema.compatTitle">Compatibility (decision_schema/compat.py)</h3>
     <ul>
       <li><strong><code>is_compatible()</code></strong>: Check schema version compatibility (minor version ranges for 0.x)</li>
       <li><strong><code>parse_version()</code></strong>: Parse SemVer to (major, minor, patch)</li>
       <li><strong><code>get_current_version()</code></strong>: Current schema version</li>
     </ul>
 
-    <h2>Inputs/Outputs</h2>
-    <p><strong>Inputs:</strong> None (foundation package)</p>
-    <p><strong>Outputs:</strong> Type definitions used by all cores: <code>Proposal</code> → DMC; <code>FinalDecision</code> → executor; <code>PacketV2</code> → evaluation-core; <code>Action</code> enum → all cores.</p>
+    <h2 data-i18n="coreDetail.schema.inputsOutputsTitle">Inputs/Outputs</h2>
+    <p data-i18n="coreDetail.schema.inputsP">Inputs: None (foundation package)</p>
+    <p data-i18n="coreDetail.schema.outputsP">Outputs: Type definitions used by all cores: Proposal → DMC; FinalDecision → executor; PacketV2 → evaluation-core; Action enum → all cores.</p>
 
-    <h2>Non-Goals</h2>
+    <h2 data-i18n="coreDetail.schema.nonGoalsTitle">Non-Goals</h2>
     <ul>
       <li>Domain-specific logic (schema is domain-agnostic)</li>
       <li>Runtime behavior (does not execute decisions)</li>
       <li>Policy enforcement or metrics computation</li>
     </ul>
 
-    <h2>Design Principles</h2>
+    <h2 data-i18n="coreDetail.schema.designTitle">Design Principles</h2>
     <ol>
       <li><strong>SSOT</strong>: Single source of truth for all contracts</li>
       <li><strong>SemVer</strong>: Compatibility guarantees</li>
@@ -136,7 +136,7 @@
       <li><strong>Fail-closed</strong>: Invalid versions raise errors</li>
     </ol>
 
-    <h2>Quick Start (from README)</h2>
+    <h2 data-i18n="coreDetail.schema.quickStartTitle">Quick Start (from README)</h2>
     <pre class="code-block">from decision_schema.types import Proposal, FinalDecision, Action
 from decision_schema.packet_v2 import PacketV2
 from decision_schema.compat import is_compatible
@@ -147,7 +147,7 @@ proposal = Proposal(
     reasons=["anomaly_signal", "constraint_violation"],
     params={"value": 100},
 )</pre>
-    <p>Pin in <code>pyproject.toml</code>: <code>decision-schema&gt;=0.2,&lt;0.3</code></p>
+    <p data-i18n="coreDetail.schema.pinNote">Pin in pyproject.toml: decision-schema>=0.2,<0.3</p>
   </main>
 
   <footer class="footer">

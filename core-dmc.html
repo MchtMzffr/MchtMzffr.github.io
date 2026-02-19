@@ -44,18 +44,18 @@
     </div>
   </nav>
   <main class="container section">
-    <a href="decision-ecosystem.html" class="back-link">← Decision Ecosystem</a>
-    <h1 class="page-title">decision-modulation-core</h1>
-    <p><strong>Source: GitHub repo.</strong> Guard and modulation layer; domain-agnostic, depends only on decision-schema.</p>
-    <h2>Data flow</h2>
+    <a href="decision-ecosystem.html" class="back-link" data-i18n="coreDetail.backToEcosystem">← Decision Ecosystem</a>
+    <h1 class="page-title" data-i18n="coreDetail.dmc.title">decision-modulation-core</h1>
+    <p><strong data-i18n="coreDetail.sourceFromRepoShort">Source: GitHub repo.</strong> <span data-i18n="coreDetail.dmc.sourceNote">Guard and modulation layer; domain-agnostic, depends only on decision-schema.</span></p>
+    <h2 data-i18n="coreDetail.dmc.dataFlowTitle">Data flow</h2>
     <pre class="code-block">Proposal -> modulate(Proposal, GuardPolicy, context) -> (FinalDecision, MismatchInfo)</pre>
-    <h2>Guard order (fail-fast)</h2>
+    <h2 data-i18n="coreDetail.dmc.guardOrderTitle">Guard order (fail-fast)</h2>
     <ol><li>Ops-health</li><li>Staleness</li><li>Error-rate</li><li>Rate-limit</li><li>Circuit-breaker</li><li>Cooldown</li></ol>
-    <h2>Contracts</h2>
-    <p>Input: Proposal. Output: FinalDecision, MismatchInfo. Context: now_ms, last_event_ts_ms, ops_*, errors_in_window, etc. Policy: GuardPolicy.</p>
-    <h2>Safety</h2>
-    <p>Fail-closed on exception; deterministic; no cross-core imports.</p>
-    <h2>Import</h2>
+    <h2 data-i18n="coreDetail.dmc.contractsTitle">Contracts</h2>
+    <p data-i18n="coreDetail.dmc.contractsP">Input: Proposal. Output: FinalDecision, MismatchInfo. Context: now_ms, last_event_ts_ms, ops_*, errors_in_window, etc. Policy: GuardPolicy.</p>
+    <h2 data-i18n="coreDetail.dmc.safetyTitle">Safety</h2>
+    <p data-i18n="coreDetail.dmc.safetyP">Fail-closed on exception; deterministic; no cross-core imports.</p>
+    <h2 data-i18n="coreDetail.dmc.importTitle">Import</h2>
     <pre class="code-block">from dmc_core.dmc.modulator import modulate</pre>
   </main>
   <footer class="footer"><div class="container"><p>© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Decision Ecosystem</p></div></footer>
