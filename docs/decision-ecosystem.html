@@ -144,6 +144,15 @@
     th, td { border: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; }
     th { background: var(--bg-light); font-weight: 600; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .ecosystem-tree { text-align: center; padding: 2rem 0; }
+    .tree-root { margin-bottom: 1.5rem; }
+    .tree-root .card { max-width: 420px; margin: 0 auto; }
+    .tree-connector { width: 2px; height: 28px; background: linear-gradient(to bottom, var(--primary-light), var(--border)); margin: 0 auto 0.5rem; border-radius: 1px; }
+    .tree-level-1 { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .tree-level-1 .card-link { flex: 1 1 140px; max-width: 200px; min-width: 120px; }
+    .tree-level-1 .card { padding: 1rem; }
+    .tree-level-1 .card h3 { font-size: 1rem; }
+    .tree-level-1 .card .io { font-size: 0.8rem; }
     .footer { background: var(--fg); color: white; padding: 2.5rem 0; text-align: center; }
     .footer p { opacity: 0.85; }
     @media (max-width: 768px) {
@@ -217,6 +226,7 @@
       </p>
       <nav class="toc" aria-label="Page sections">
         <a href="#what"><span data-i18n="decisionEcosystem.toc.what">What it is</span></a>
+        <a href="#tree"><span data-i18n="decisionEcosystem.tree.title">Ecosystem tree</span></a>
         <a href="#cores"><span data-i18n="decisionEcosystem.toc.cores">Cores</span></a>
         <a href="#dataflow"><span data-i18n="decisionEcosystem.toc.dataflow">Data flow</span></a>
         <a href="#standards"><span data-i18n="decisionEcosystem.toc.standards">Standards</span></a>
@@ -238,6 +248,41 @@
         <li data-i18n="decisionEcosystem.what.principle3"></li>
         <li data-i18n="decisionEcosystem.what.principle4"></li>
       </ul>
+    </div>
+  </section>
+
+  <section id="tree" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="decisionEcosystem.tree.title">Ecosystem tree</h2>
+      <p class="section-subtitle" data-i18n="decisionEcosystem.tree.subtitle">Each core depends only on decision-schema. Click a node to open its detail page.</p>
+      <div class="ecosystem-tree">
+        <div class="tree-root">
+          <a href="core-decision-schema.html" class="card-link">
+            <div class="card">
+              <h3>decision-schema</h3>
+              <div class="io" data-i18n="decisionEcosystem.tree.rootLabel">Single contract (all cores depend on this)</div>
+            </div>
+          </a>
+        </div>
+        <div class="tree-connector" aria-hidden="true"></div>
+        <div class="tree-level-1">
+          <a href="core-mdm-engine.html" class="card-link">
+            <div class="card"><h3>mdm-engine</h3><div class="io" data-i18n="decisionEcosystem.tree.dependsOn">Depends only on schema</div></div>
+          </a>
+          <a href="core-dmc.html" class="card-link">
+            <div class="card"><h3>decision-modulation-core</h3><div class="io" data-i18n="decisionEcosystem.tree.dependsOn">Depends only on schema</div></div>
+          </a>
+          <a href="core-ops-health.html" class="card-link">
+            <div class="card"><h3>ops-health-core</h3><div class="io" data-i18n="decisionEcosystem.tree.dependsOn">Depends only on schema</div></div>
+          </a>
+          <a href="core-eval-calibration.html" class="card-link">
+            <div class="card"><h3>evaluation-calibration-core</h3><div class="io" data-i18n="decisionEcosystem.tree.dependsOn">Depends only on schema</div></div>
+          </a>
+          <a href="core-exec-orchestration.html" class="card-link">
+            <div class="card"><h3>execution-orchestration-core</h3><div class="io" data-i18n="decisionEcosystem.tree.dependsOn">Depends only on schema</div></div>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -422,7 +467,7 @@ proposal = engine.propose(context)  # Proposal from decision-schema</pre>
 
   <footer class="footer">
     <div class="container">
-      <p data-i18n="footer.text" data-i18n-html="true">© <span id="year"></span> Muzaffer Karafil · Unreal Engine &amp; Unity Plugin Developer</p>
+      <p data-i18n="footer.text" data-i18n-html="true">© <span id="year"></span> Muzaffer Karafil · Decision Ecosystem</p>
     </div>
   </footer>
 
