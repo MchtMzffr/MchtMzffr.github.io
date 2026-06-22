@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BlueprintOutline – Documentation</title>
+  <meta name="description" content="BlueprintOutline: Unreal Engine editor plugin for Blueprint tree navigation, bookmarks, filters, and human-readable documentation export (v1.4)."/>
+  <link rel="canonical" href="https://mchtmzffr.github.io/blueprint-outline/"/>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #7c3aed;
+      --fg: #1f2937;
+      --fg-light: #6b7280;
+      --bg: #ffffff;
+      --bg-light: #f8fafc;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--fg); line-height: 1.65; background: var(--bg); }
+    .nav { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 10; }
+    .nav-inner { max-width: 960px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .hero { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 4rem 1.5rem 3rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .hero p { max-width: 640px; margin: 0 auto 1.5rem; opacity: 0.95; font-size: 1.1rem; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.85rem; margin: 0.25rem; }
+    .btn { display: inline-block; padding: 0.75rem 1.25rem; border-radius: var(--radius); font-weight: 600; text-decoration: none; margin: 0.35rem; }
+    .btn-light { background: white; color: var(--primary-dark); }
+    .btn-ghost { border: 2px solid rgba(255,255,255,0.8); color: white; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 3rem 0; }
+    .section.alt { background: var(--bg-light); }
+    h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: var(--primary-dark); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+    .card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+    .card ul { margin: 0.5rem 0 0 1.1rem; color: var(--fg-light); }
+    pre { background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: var(--radius); overflow-x: auto; font-size: 0.85rem; margin: 1rem 0; }
+    .lang-toggle { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
+    .lang-toggle button { border: 1px solid var(--border); background: white; padding: 0.4rem 0.9rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .lang-toggle button.active { background: var(--primary); color: white; border-color: var(--primary); }
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+    footer { text-align: center; padding: 2rem; color: var(--fg-light); font-size: 0.9rem; border-top: 1px solid var(--border); }
+    footer a { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../">← Muzaffer Karafil</a>
+      <div>
+        <a href="https://fab.com/s/2b2cdbcedcba" target="_blank" rel="noopener">Fab</a>
+        ·
+        <a href="https://youtu.be/QQfDsgd94Qg" target="_blank" rel="noopener">Video</a>
+        ·
+        <a href="mailto:mucahit.muzaffer@gmail.com">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>BlueprintOutline</h1>
+    <p>Navigate complex Blueprint graphs as a clean execution tree — jump to any node, filter, bookmark, and export human-readable documentation.</p>
+    <div>
+      <span class="badge">v1.4.0</span>
+      <span class="badge">UE 5.3 – 5.8</span>
+      <span class="badge">Editor-only</span>
+      <span class="badge">Win64 / Mac</span>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <a class="btn btn-light" href="https://fab.com/s/2b2cdbcedcba" target="_blank" rel="noopener">Get on Fab</a>
+      <a class="btn btn-ghost" href="https://youtu.be/QQfDsgd94Qg" target="_blank" rel="noopener">Watch Demo</a>
+    </div>
+  </header>
+
+  <div class="lang-toggle container" style="padding-top: 2rem;">
+    <button type="button" class="active" data-set-lang="en">English</button>
+    <button type="button" data-set-lang="tr">Türkçe</button>
+  </div>
+
+  <div data-lang="en" class="active">
+    <section class="section container">
+      <h2>What it does</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Tree navigation</h3>
+          <ul>
+            <li>Exec-flow tree for events &amp; functions</li>
+            <li>Double-click jump to graph node</li>
+            <li>Flow lanes, bookmarks, comments</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Documentation (v1.4)</h3>
+          <ul>
+            <li>Human-readable copy/export (no K2Node noise)</li>
+            <li>Copy subtree or full event</li>
+            <li>Markdown export, optional doc panel</li>
+            <li>Pin tooltips (inputs/outputs)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Productivity</h3>
+          <ul>
+            <li>Search, regex, filters</li>
+            <li>Multi-BP panel support</li>
+            <li>Keyboard shortcuts (Ctrl+F, R, E…)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Documentation example</h2>
+        <p style="color: var(--fg-light); margin-bottom: 0.5rem;">Readable export — variables and targets inline:</p>
+        <pre>Event Fire
+  Sequence
+    Then 0 → Branch(Condition = true)
+      False → SpawnSystemAtLocation(System Template = Decal System)
+        Set Decal(Decal = SpawnSystemAtLocation)</pre>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Quick start</h2>
+      <ol style="margin-left: 1.25rem; color: var(--fg-light);">
+        <li>Copy <code>BlueprintOutline</code> to your project's <code>Plugins/</code> folder</li>
+        <li>Enable in <strong>Edit → Plugins</strong>, restart the editor</li>
+        <li>Open a Blueprint → toolbar <strong>BlueprintOutline</strong> or Window menu</li>
+        <li>Right-click a node → <strong>Copy Subtree from Here</strong> for documentation</li>
+      </ol>
+      <p style="margin-top: 1rem;">Full user guide ships inside the plugin: <code>Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code></p>
+    </section>
+  </div>
+
+  <div data-lang="tr">
+    <section class="section container">
+      <h2>Ne yapar?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Ağaç navigasyonu</h3>
+          <ul>
+            <li>Event ve function exec akışı</li>
+            <li>Çift tıkla graph'ta node'a git</li>
+            <li>Flow lane, bookmark, yorum</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Dokümantasyon (v1.4)</h3>
+          <ul>
+            <li>İnsan okunur metin (K2Node gürültüsü yok)</li>
+            <li>Subtree veya tüm event kopyala</li>
+            <li>Markdown export, opsiyonel doc panel</li>
+            <li>Pin tooltip (giriş/çıkış)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Verimlilik</h3>
+          <ul>
+            <li>Arama, regex, filtreler</li>
+            <li>Çoklu Blueprint paneli</li>
+            <li>Klavye kısayolları</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Dokümantasyon örneği</h2>
+        <pre>Event Fire
+  Sequence
+    Then 0 → Branch(Condition = true)
+      False → SpawnSystemAtLocation(System Template = Decal System)</pre>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Hızlı kurulum</h2>
+      <ol style="margin-left: 1.25rem; color: var(--fg-light);">
+        <li><code>BlueprintOutline</code> klasörünü proje <code>Plugins/</code> içine kopyalayın</li>
+        <li><strong>Edit → Plugins</strong> menüsünden etkinleştirin, editörü yeniden başlatın</li>
+        <li>Blueprint açın → toolbar <strong>BlueprintOutline</strong></li>
+        <li>Sağ tık → <strong>Copy Subtree from Here</strong></li>
+      </ol>
+      <p style="margin-top: 1rem;">Kullanıcı kılavuzu: <code>Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> Muzaffer Karafil · <a href="../">Home</a> · <a href="https://fab.com/s/2b2cdbcedcba">Fab</a></p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('[data-set-lang]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-set-lang');
+        document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('active', b === btn));
+        document.querySelectorAll('[data-lang]').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === lang));
+      });
+    });
+  </script>
+</body>
+</html>
