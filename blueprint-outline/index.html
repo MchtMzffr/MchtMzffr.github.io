@@ -1,210 +1,690 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>BlueprintOutline – Documentation</title>
-  <meta name="description" content="BlueprintOutline: Unreal Engine editor plugin for Blueprint tree navigation, bookmarks, filters, and human-readable documentation export (v1.4)."/>
-  <link rel="canonical" href="https://mchtmzffr.github.io/blueprint-outline/"/>
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --accent: #7c3aed;
-      --fg: #1f2937;
-      --fg-light: #6b7280;
-      --bg: #ffffff;
-      --bg-light: #f8fafc;
-      --border: #e5e7eb;
-      --radius: 12px;
-      --shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--fg); line-height: 1.65; background: var(--bg); }
-    .nav { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 10; }
-    .nav-inner { max-width: 960px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
-    .nav a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .hero { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 4rem 1.5rem 3rem; text-align: center; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { max-width: 640px; margin: 0 auto 1.5rem; opacity: 0.95; font-size: 1.1rem; }
-    .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.85rem; margin: 0.25rem; }
-    .btn { display: inline-block; padding: 0.75rem 1.25rem; border-radius: var(--radius); font-weight: 600; text-decoration: none; margin: 0.35rem; }
-    .btn-light { background: white; color: var(--primary-dark); }
-    .btn-ghost { border: 2px solid rgba(255,255,255,0.8); color: white; }
-    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
-    .section { padding: 3rem 0; }
-    .section.alt { background: var(--bg-light); }
-    h2 { font-size: 1.75rem; margin-bottom: 1rem; }
-    h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: var(--primary-dark); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-    .card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-    .card ul { margin: 0.5rem 0 0 1.1rem; color: var(--fg-light); }
-    pre { background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: var(--radius); overflow-x: auto; font-size: 0.85rem; margin: 1rem 0; }
-    .lang-toggle { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
-    .lang-toggle button { border: 1px solid var(--border); background: white; padding: 0.4rem 0.9rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
-    .lang-toggle button.active { background: var(--primary); color: white; border-color: var(--primary); }
-    [data-lang] { display: none; }
-    [data-lang].active { display: block; }
-    footer { text-align: center; padding: 2rem; color: var(--fg-light); font-size: 0.9rem; border-top: 1px solid var(--border); }
-    footer a { color: var(--primary); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlueprintOutline — Unreal Engine Blueprint Navigator</title>
+<meta name="description" content="Navigate, document, and understand complex Unreal Engine Blueprints with a clean execution tree. UE 5.3–5.8 editor plugin.">
+<link rel="canonical" href="https://mchtmzffr.github.io/blueprint-outline/">
+<meta property="og:title" content="BlueprintOutline — UE Blueprint Navigator">
+<meta property="og:description" content="Execution tree navigation, jump-to-node, filters, bookmarks, and human-readable documentation export.">
+<meta property="og:url" content="https://mchtmzffr.github.io/blueprint-outline/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0A0C10;
+    --bg2: #111520;
+    --card: #141928;
+    --border: #1E2840;
+    --accent: #4F8EF7;
+    --accent2: #7DAFFF;
+    --text: #C8D6F5;
+    --muted: #6B7A9A;
+    --event: #E06C75;
+    --branch: #E5C07B;
+    --fn: #61AFEF;
+    --seq: #98C379;
+    --radius: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.5rem; height: 56px;
+    background: rgba(10,12,16,.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-left { display: flex; align-items: center; gap: 1.25rem; }
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px;
+    color: var(--accent); letter-spacing: -.5px; text-decoration: none;
+  }
+  .nav-home { color: var(--muted); text-decoration: none; font-size: 13px; }
+  .nav-home:hover { color: var(--text); }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: .75rem; }
+  .lang-btn {
+    background: transparent; border: 1px solid var(--border); color: var(--muted);
+    padding: .3rem .65rem; border-radius: 6px; font-size: 12px; cursor: pointer;
+    font-family: inherit; transition: border-color .2s, color .2s;
+  }
+  .lang-btn.active { border-color: var(--accent); color: var(--accent2); }
+  .nav-cta {
+    background: var(--accent); color: #fff; padding: .4rem 1rem; border-radius: 6px;
+    font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity .2s;
+  }
+  .nav-cta:hover { opacity: .88; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 6rem 1.5rem 4rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(79,142,247,.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: rgba(79,142,247,.12); border: 1px solid rgba(79,142,247,.25);
+    color: var(--accent2); font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; padding: .3rem .75rem; border-radius: 20px;
+    margin-bottom: 1.5rem; letter-spacing: .5px;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; }
+  .hero h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.85rem, 5vw, 3.25rem);
+    font-weight: 700; line-height: 1.15; color: #fff; margin-bottom: 1.25rem;
+    letter-spacing: -1px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    max-width: 580px; color: var(--muted); font-size: 16px;
+    margin: 0 auto 2rem; line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: var(--accent); color: #fff; padding: .7rem 1.5rem;
+    border-radius: var(--radius); font-weight: 600; text-decoration: none;
+    font-size: 14px; transition: opacity .2s, transform .15s;
+    display: inline-flex; align-items: center; gap: .4rem;
+  }
+  .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--text); padding: .7rem 1.5rem;
+    border-radius: var(--radius); font-weight: 500; text-decoration: none;
+    font-size: 14px; border: 1px solid var(--border); transition: border-color .2s, transform .15s;
+    display: inline-flex; align-items: center; gap: .4rem;
+  }
+  .btn-secondary:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+  .tree-demo {
+    margin: 3rem auto 0; max-width: 500px; width: 100%;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    text-align: left; position: relative;
+  }
+  .tree-demo-bar {
+    display: flex; gap: .4rem; margin-bottom: 1rem;
+    padding-bottom: .75rem; border-bottom: 1px solid var(--border);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #FF5F57; }
+  .dot-y { background: #FFBD2E; }
+  .dot-g { background: #28C840; }
+  .tree-title { color: var(--muted); font-size: 11px; margin-left: auto; }
+  .tree-line { display: flex; align-items: center; gap: .35rem; padding: 2px 0; opacity: 0; animation: fadein .3s forwards; }
+  .tree-line:nth-child(2)  { animation-delay: .1s; }
+  .tree-line:nth-child(3)  { animation-delay: .22s; }
+  .tree-line:nth-child(4)  { animation-delay: .34s; }
+  .tree-line:nth-child(5)  { animation-delay: .46s; }
+  .tree-line:nth-child(6)  { animation-delay: .58s; }
+  .tree-line:nth-child(7)  { animation-delay: .7s; }
+  .tree-line:nth-child(8)  { animation-delay: .82s; }
+  .tree-line:nth-child(9)  { animation-delay: .94s; }
+  .tree-line:nth-child(10) { animation-delay: 1.06s; }
+  @keyframes fadein { to { opacity: 1; } }
+  .indent-1 { padding-left: 1rem; }
+  .indent-2 { padding-left: 2rem; }
+  .indent-3 { padding-left: 3rem; }
+  .guide { color: #2A3A58; user-select: none; }
+  .tag-event  { color: var(--event); }
+  .tag-branch { color: var(--branch); }
+  .tag-fn     { color: var(--fn); }
+  .tag-seq    { color: var(--seq); }
+  .tag-muted  { color: var(--muted); }
+
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: .6rem;
+  }
+  .section-title {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: clamp(1.35rem, 3vw, 2rem); color: #fff; margin-bottom: 1rem;
+  }
+  .section-sub { color: var(--muted); max-width: 560px; font-size: 15px; }
+
+  .video-section { background: var(--bg2); }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 60px rgba(79,142,247,.07); margin-top: 2.5rem;
+  }
+  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+  .features-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px; border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden; margin-top: 2.5rem; background: var(--border);
+  }
+  .feat-card { background: var(--card); padding: 1.5rem 1.75rem; transition: background .2s; }
+  .feat-card:hover { background: #17203A; }
+  .feat-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(79,142,247,.12); border: 1px solid rgba(79,142,247,.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; margin-bottom: 1rem;
+  }
+  .feat-title { font-weight: 600; color: #fff; font-size: 14px; margin-bottom: .4rem; }
+  .feat-desc { color: var(--muted); font-size: 13px; line-height: 1.6; }
+  .feat-desc code { color: var(--accent2); font-size: 11px; font-family: 'JetBrains Mono', monospace; }
+
+  .doc-pre {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.25rem 1.5rem; margin-top: 1.5rem; overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.65; color: var(--text);
+  }
+
+  .steps { margin-top: 1.5rem; list-style: none; counter-reset: step; }
+  .steps li {
+    counter-increment: step; position: relative; padding: .85rem 0 .85rem 2.75rem;
+    border-bottom: 1px solid var(--border); color: var(--muted); font-size: 14px;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: .85rem;
+    width: 1.75rem; height: 1.75rem; border-radius: 50%;
+    background: rgba(79,142,247,.15); border: 1px solid rgba(79,142,247,.3);
+    color: var(--accent2); font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps strong { color: var(--text); }
+
+  .compat-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+  .compat-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text); padding: .35rem .85rem; border-radius: 6px;
+  }
+
+  .feedback-section { background: var(--bg2); }
+  .feedback-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 560px; }
+  .form-row { display: flex; flex-direction: column; gap: .4rem; }
+  .form-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .form-input, .form-select, .form-textarea {
+    background: var(--card); border: 1px solid var(--border); color: var(--text);
+    border-radius: var(--radius); padding: .65rem 1rem; font-size: 14px;
+    font-family: inherit; outline: none; transition: border-color .2s; width: 100%;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
+  .form-textarea { min-height: 110px; resize: vertical; }
+  .stars { display: flex; gap: .4rem; }
+  .star { font-size: 22px; cursor: pointer; color: var(--border); transition: color .15s; user-select: none; }
+  .star.active { color: var(--branch); }
+  .submit-btn {
+    background: var(--accent); color: #fff; border: none; cursor: pointer;
+    padding: .7rem 1.5rem; border-radius: var(--radius); font-weight: 600;
+    font-size: 14px; font-family: inherit; transition: opacity .2s; align-self: flex-start;
+  }
+  .submit-btn:hover { opacity: .85; }
+  .form-success {
+    display: none; background: rgba(152,195,121,.1);
+    border: 1px solid rgba(152,195,121,.25); color: var(--seq);
+    padding: 1rem 1.25rem; border-radius: var(--radius); font-size: 14px;
+  }
+
+  .links-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; margin-top: 2rem;
+  }
+  .link-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.25rem 1.5rem; text-decoration: none;
+    transition: border-color .2s, transform .15s;
+    display: flex; flex-direction: column; gap: .35rem;
+  }
+  .link-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .link-card-icon { font-size: 20px; }
+  .link-card-title { font-weight: 600; color: #fff; font-size: 14px; }
+  .link-card-desc { color: var(--muted); font-size: 12px; }
+
+  [data-lang] { display: none; }
+  [data-lang].active { display: block; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 2rem 1.5rem;
+    text-align: center; color: var(--muted); font-size: 12px;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    section { padding: 3.5rem 1.25rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tree-line { animation: none; opacity: 1; }
+    .btn-primary:hover, .btn-secondary:hover, .link-card:hover { transform: none; }
+  }
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="../">← Muzaffer Karafil</a>
-      <div>
-        <a href="https://fab.com/s/2b2cdbcedcba" target="_blank" rel="noopener">Fab</a>
-        ·
-        <a href="https://youtu.be/QQfDsgd94Qg" target="_blank" rel="noopener">Video</a>
-        ·
-        <a href="mailto:mucahit.muzaffer@gmail.com">Support</a>
-      </div>
-    </div>
-  </nav>
 
-  <header class="hero">
-    <h1>BlueprintOutline</h1>
-    <p>Navigate complex Blueprint graphs as a clean execution tree — jump to any node, filter, bookmark, and export human-readable documentation.</p>
-    <div>
-      <span class="badge">v1.4.0</span>
-      <span class="badge">UE 5.3 – 5.8</span>
-      <span class="badge">Editor-only</span>
-      <span class="badge">Win64 / Mac</span>
-    </div>
-    <div style="margin-top: 1.5rem;">
-      <a class="btn btn-light" href="https://fab.com/s/2b2cdbcedcba" target="_blank" rel="noopener">Get on Fab</a>
-      <a class="btn btn-ghost" href="https://youtu.be/QQfDsgd94Qg" target="_blank" rel="noopener">Watch Demo</a>
-    </div>
-  </header>
-
-  <div class="lang-toggle container" style="padding-top: 2rem;">
-    <button type="button" class="active" data-set-lang="en">English</button>
-    <button type="button" data-set-lang="tr">Türkçe</button>
+<nav>
+  <div class="nav-left">
+    <a href="../" class="nav-home">← Muzaffer Karafil</a>
+    <a href="#" class="nav-logo">BlueprintOutline</a>
   </div>
+  <ul class="nav-links">
+    <li><a href="#video" data-i18n="nav-video">Video</a></li>
+    <li><a href="#features" data-i18n="nav-features">Features</a></li>
+    <li><a href="#install" data-i18n="nav-install">Install</a></li>
+    <li><a href="#feedback" data-i18n="nav-feedback">Feedback</a></li>
+  </ul>
+  <div class="nav-right">
+    <button type="button" class="lang-btn active" data-lang-set="en">EN</button>
+    <button type="button" class="lang-btn" data-lang-set="tr">TR</button>
+    <a href="https://fab.com/s/43c6c4b3a39e" target="_blank" rel="noopener" class="nav-cta" data-i18n="nav-cta">Get on Fab →</a>
+  </div>
+</nav>
 
-  <div data-lang="en" class="active">
-    <section class="section container">
-      <h2>What it does</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Tree navigation</h3>
-          <ul>
-            <li>Exec-flow tree for events &amp; functions</li>
-            <li>Double-click jump to graph node</li>
-            <li>Flow lanes, bookmarks, comments</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Documentation (v1.4)</h3>
-          <ul>
-            <li>Human-readable copy/export (no K2Node noise)</li>
-            <li>Copy subtree or full event</li>
-            <li>Markdown export, optional doc panel</li>
-            <li>Pin tooltips (inputs/outputs)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Productivity</h3>
-          <ul>
-            <li>Search, regex, filters</li>
-            <li>Multi-BP panel support</li>
-            <li>Keyboard shortcuts (Ctrl+F, R, E…)</li>
-          </ul>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">UE 5.3 – 5.8 · Editor Plugin · v1.4.2</div>
+    <h1 data-i18n="hero-title">Read your Blueprints,<br><span>don't just build them.</span></h1>
+    <p data-i18n="hero-sub">BlueprintOutline turns complex Blueprint graphs into a clean, navigable execution tree — with one-click jump-to-node, real-time search, bookmarks, and human-readable documentation export.</p>
+    <div class="hero-actions">
+      <a href="https://fab.com/s/43c6c4b3a39e" target="_blank" rel="noopener" class="btn-primary" data-i18n="hero-fab">↓ Get on Fab</a>
+      <a href="#video" class="btn-secondary" data-i18n="hero-video">▶ Watch Overview</a>
+    </div>
+    <div class="tree-demo" aria-hidden="true">
+      <div class="tree-demo-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="tree-title">Blueprint Outline</span>
       </div>
-    </section>
+      <div class="tree-line"><span class="tag-event">⬡ Event BeginPlay</span></div>
+      <div class="tree-line indent-1"><span class="guide">├─</span> <span class="tag-fn">Set IsAlive</span> <span class="tag-muted">= true</span></div>
+      <div class="tree-line indent-1"><span class="guide">├─</span> <span class="tag-branch">Branch</span> <span class="tag-muted">HasAuthority</span></div>
+      <div class="tree-line indent-2"><span class="guide">├─</span> <span class="tag-seq">True → Sequence</span></div>
+      <div class="tree-line indent-3"><span class="guide">├─</span> <span class="tag-fn">Spawn Actor</span> <span class="tag-muted">System = ParticleManager</span></div>
+      <div class="tree-line indent-3"><span class="guide">└─</span> <span class="tag-fn">Set Timer by Event</span> <span class="tag-muted">Duration = 3.0</span></div>
+      <div class="tree-line indent-2"><span class="guide">└─</span> <span class="tag-fn">Print String</span> <span class="tag-muted">"Client only"</span></div>
+      <div class="tree-line"><span class="tag-event">⬡ Custom Event: OnDamaged</span></div>
+      <div class="tree-line indent-1"><span class="guide">└─</span> <span class="tag-fn">Apply Damage</span></div>
+    </div>
+  </div>
+</section>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>Documentation example</h2>
-        <p style="color: var(--fg-light); margin-bottom: 0.5rem;">Readable export — variables and targets inline:</p>
-        <pre>Event Fire
+<!-- VIDEO -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="section-label" data-i18n="lbl-overview">Overview</div>
+    <h2 class="section-title" data-i18n="video-title">See it in action</h2>
+    <p class="section-sub" data-i18n="video-sub">Watch how BlueprintOutline turns a tangled graph into a readable execution tree in seconds.</p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/fRqK18ZJ2pw"
+        title="BlueprintOutline Overview"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-label" data-i18n="lbl-features">Features</div>
+    <h2 class="section-title" data-i18n="feat-heading">Everything you need</h2>
+    <p class="section-sub" data-i18n="feat-sub">Built for developers navigating large, complex Blueprint systems — solo or on a team.</p>
+
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🌲</div>
+        <div class="feat-title" data-i18n="f1-t">Execution Tree View</div>
+        <div class="feat-desc" data-i18n="f1-d">Full Event → Branch → Node hierarchy at a glance. Macros and collapsed graphs expand automatically. Flow lanes for parallel paths.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📄</div>
+        <div class="feat-title" data-i18n="f2-t">Documentation Export</div>
+        <div class="feat-desc" data-i18n="f2-d">Copy or export as plain text or Markdown — no <code>K2Node</code> noise. Pin values inline: <code>Duration = 3.0</code>. Optional documentation panel with semantic colors.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title" data-i18n="f3-t">Jump to Node</div>
+        <div class="feat-desc" data-i18n="f3-d">Double-click any tree item to focus that node in the Blueprint graph. Two-way selection sync with the editor.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔍</div>
+        <div class="feat-title" data-i18n="f4-t">Search &amp; Filters</div>
+        <div class="feat-desc" data-i18n="f4-d">Real-time search with regex. Filter by node type, errors, bookmarks, comments, return/reroute nodes, and reference entries.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔖</div>
+        <div class="feat-title" data-i18n="f5-t">Bookmarks &amp; Comments</div>
+        <div class="feat-desc" data-i18n="f5-d">Bookmark important nodes across Blueprints. Add inline comments — updates instantly without recompiling.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⌨️</div>
+        <div class="feat-title" data-i18n="f6-t">Keyboard Shortcuts</div>
+        <div class="feat-desc" data-i18n="f6-d"><code>Ctrl+F</code> search · <code>Ctrl+R</code> refresh · <code>Ctrl+E</code> expand all · <code>Ctrl+C</code> copy tree · rename, duplicate, delete from context menu.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔀</div>
+        <div class="feat-title" data-i18n="f7-t">Branch &amp; Sequence</div>
+        <div class="feat-desc" data-i18n="f7-d">True/False paths shown separately. Sequence pins listed in execution order. Switch and MultiGate lane labels.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🚀</div>
+        <div class="feat-title" data-i18n="f8-t">Async Build &amp; Cache</div>
+        <div class="feat-desc" data-i18n="f8-d">Large Blueprints build off the game thread. Smart cache with expansion-state preservation on refresh and compile.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🪟</div>
+        <div class="feat-title" data-i18n="f9-t">Multi-Editor Panels</div>
+        <div class="feat-desc" data-i18n="f9-d">Each Blueprint Editor window gets its own embedded panel. Work on multiple Blueprints simultaneously.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem">
+      <div class="section-label" data-i18n="lbl-compat">Compatibility</div>
+      <div class="compat-row">
+        <span class="compat-tag">UE 5.3</span>
+        <span class="compat-tag">UE 5.4</span>
+        <span class="compat-tag">UE 5.5</span>
+        <span class="compat-tag">UE 5.6</span>
+        <span class="compat-tag">UE 5.7</span>
+        <span class="compat-tag">UE 5.8</span>
+        <span class="compat-tag">Windows 64-bit</span>
+        <span class="compat-tag">Mac</span>
+        <span class="compat-tag" data-i18n="tag-editor">Editor-only · No runtime</span>
+        <span class="compat-tag" data-i18n="tag-lang">English · Turkish UI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL + DOC EXAMPLE -->
+<section class="video-section" id="install">
+  <div class="container">
+    <div class="grid-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem;align-items:start;">
+      <div>
+        <div class="section-label" data-i18n="lbl-install">Quick start</div>
+        <h2 class="section-title" data-i18n="install-title">Get running in 2 minutes</h2>
+        <ol class="steps">
+          <li data-i18n="step1">Copy <strong>BlueprintOutline</strong> to your project's <strong>Plugins/</strong> folder (or install from Fab).</li>
+          <li data-i18n="step2">Enable in <strong>Edit → Plugins</strong>, then restart the editor.</li>
+          <li data-i18n="step3">Open any Blueprint → toolbar <strong>BlueprintOutline</strong> button or Window menu.</li>
+          <li data-i18n="step4">Right-click a node → <strong>Copy Subtree from Here</strong> for documentation.</li>
+        </ol>
+        <p style="margin-top:1.25rem;color:var(--muted);font-size:13px;" data-i18n="guide-note">Full guide ships in the plugin: <code style="color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:12px;">Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code></p>
+      </div>
+      <div>
+        <div class="section-label" data-i18n="lbl-doc">Export example</div>
+        <h2 class="section-title" style="font-size:1.25rem;" data-i18n="doc-title">Human-readable output</h2>
+        <pre class="doc-pre">Event Fire
   Sequence
     Then 0 → Branch(Condition = true)
       False → SpawnSystemAtLocation(System Template = Decal System)
         Set Decal(Decal = SpawnSystemAtLocation)</pre>
       </div>
-    </section>
-
-    <section class="section container">
-      <h2>Quick start</h2>
-      <ol style="margin-left: 1.25rem; color: var(--fg-light);">
-        <li>Copy <code>BlueprintOutline</code> to your project's <code>Plugins/</code> folder</li>
-        <li>Enable in <strong>Edit → Plugins</strong>, restart the editor</li>
-        <li>Open a Blueprint → toolbar <strong>BlueprintOutline</strong> or Window menu</li>
-        <li>Right-click a node → <strong>Copy Subtree from Here</strong> for documentation</li>
-      </ol>
-      <p style="margin-top: 1rem;">Full user guide ships inside the plugin: <code>Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code></p>
-    </section>
+    </div>
   </div>
+</section>
 
-  <div data-lang="tr">
-    <section class="section container">
-      <h2>Ne yapar?</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Ağaç navigasyonu</h3>
-          <ul>
-            <li>Event ve function exec akışı</li>
-            <li>Çift tıkla graph'ta node'a git</li>
-            <li>Flow lane, bookmark, yorum</li>
-          </ul>
+<!-- FEEDBACK -->
+<section class="feedback-section" id="feedback">
+  <div class="container">
+    <div class="section-label" data-i18n="lbl-feedback">Feedback</div>
+    <h2 class="section-title" data-i18n="fb-title">Tell us what you think</h2>
+    <p class="section-sub" data-i18n="fb-sub">Your feedback shapes the next version. Bug reports, feature ideas, and workflow tips are all welcome.</p>
+
+    <form class="feedback-form" id="feedbackForm">
+      <div class="form-row">
+        <label class="form-label" data-i18n="fb-rating">Overall rating</label>
+        <div class="stars" id="starRating">
+          <span class="star" data-v="1">★</span>
+          <span class="star" data-v="2">★</span>
+          <span class="star" data-v="3">★</span>
+          <span class="star" data-v="4">★</span>
+          <span class="star" data-v="5">★</span>
         </div>
-        <div class="card">
-          <h3>Dokümantasyon (v1.4)</h3>
-          <ul>
-            <li>İnsan okunur metin (K2Node gürültüsü yok)</li>
-            <li>Subtree veya tüm event kopyala</li>
-            <li>Markdown export, opsiyonel doc panel</li>
-            <li>Pin tooltip (giriş/çıkış)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Verimlilik</h3>
-          <ul>
-            <li>Arama, regex, filtreler</li>
-            <li>Çoklu Blueprint paneli</li>
-            <li>Klavye kısayolları</li>
-          </ul>
-        </div>
+        <input type="hidden" name="rating" id="ratingValue" value="">
       </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <h2>Dokümantasyon örneği</h2>
-        <pre>Event Fire
-  Sequence
-    Then 0 → Branch(Condition = true)
-      False → SpawnSystemAtLocation(System Template = Decal System)</pre>
+      <div class="form-row">
+        <label class="form-label" for="useCase" data-i18n="fb-use">What do you use it for?</label>
+        <select class="form-select" id="useCase" name="use_case">
+          <option value="" data-i18n="fb-select">Select…</option>
+          <option value="navigate" data-i18n="fb-o1">Navigating large Blueprints</option>
+          <option value="debug" data-i18n="fb-o2">Debugging logic flow</option>
+          <option value="docs" data-i18n="fb-o3">Generating documentation</option>
+          <option value="onboard" data-i18n="fb-o4">Onboarding team members</option>
+          <option value="review" data-i18n="fb-o5">Blueprint code review</option>
+          <option value="other" data-i18n="fb-o6">Other</option>
+        </select>
       </div>
-    </section>
-
-    <section class="section container">
-      <h2>Hızlı kurulum</h2>
-      <ol style="margin-left: 1.25rem; color: var(--fg-light);">
-        <li><code>BlueprintOutline</code> klasörünü proje <code>Plugins/</code> içine kopyalayın</li>
-        <li><strong>Edit → Plugins</strong> menüsünden etkinleştirin, editörü yeniden başlatın</li>
-        <li>Blueprint açın → toolbar <strong>BlueprintOutline</strong></li>
-        <li>Sağ tık → <strong>Copy Subtree from Here</strong></li>
-      </ol>
-      <p style="margin-top: 1rem;">Kullanıcı kılavuzu: <code>Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code></p>
-    </section>
+      <div class="form-row">
+        <label class="form-label" for="feedbackText" data-i18n="fb-msg">Your feedback</label>
+        <textarea class="form-textarea" id="feedbackText" name="message" required placeholder="What's working well? What would make this better?"></textarea>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="feedbackEmail" data-i18n="fb-email">Email (optional)</label>
+        <input type="email" class="form-input" id="feedbackEmail" name="email" placeholder="you@example.com">
+      </div>
+      <button type="submit" class="submit-btn" data-i18n="fb-send">Send Feedback →</button>
+      <div class="form-success" id="formSuccess" data-i18n="fb-ok">✓ Thank you! Your feedback has been sent.</div>
+    </form>
+    <p style="margin-top:1rem;font-size:12px;color:var(--muted);" data-i18n="fb-alt">Or email directly: <a href="mailto:mucahit.muzaffer@gmail.com" style="color:var(--accent2);">mucahit.muzaffer@gmail.com</a></p>
   </div>
+</section>
 
-  <footer>
-    <p>© <span id="year"></span> Muzaffer Karafil · <a href="../">Home</a> · <a href="https://fab.com/s/2b2cdbcedcba">Fab</a></p>
-  </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelectorAll('[data-set-lang]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-set-lang');
-        document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('active', b === btn));
-        document.querySelectorAll('[data-lang]').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === lang));
-      });
+<!-- LINKS -->
+<section id="links">
+  <div class="container">
+    <div class="section-label" data-i18n="lbl-links">Resources</div>
+    <h2 class="section-title" data-i18n="links-title">Documentation &amp; community</h2>
+    <div class="links-grid">
+      <a href="https://fab.com/s/43c6c4b3a39e" target="_blank" rel="noopener" class="link-card">
+        <div class="link-card-icon">🛒</div>
+        <div class="link-card-title" data-i18n="l1-t">Get on Fab</div>
+        <div class="link-card-desc" data-i18n="l1-d">Download and install the plugin</div>
+      </a>
+      <a href="https://youtu.be/fRqK18ZJ2pw" target="_blank" rel="noopener" class="link-card">
+        <div class="link-card-icon">▶</div>
+        <div class="link-card-title">YouTube</div>
+        <div class="link-card-desc" data-i18n="l2-d">Plugin overview and walkthrough</div>
+      </a>
+      <a href="https://docs.google.com/document/d/1fsdCR7YVo-pAa84UjqE1MNGN8E3viBLM/edit?usp=sharing" target="_blank" rel="noopener" class="link-card">
+        <div class="link-card-icon">📘</div>
+        <div class="link-card-title" data-i18n="l3-t">Technical Docs</div>
+        <div class="link-card-desc" data-i18n="l3-d">Full feature reference</div>
+      </a>
+      <a href="https://www.reddit.com/r/BlueprintOutline/" target="_blank" rel="noopener" class="link-card">
+        <div class="link-card-icon">💬</div>
+        <div class="link-card-title">Reddit</div>
+        <div class="link-card-desc" data-i18n="l4-d">Support, requests, discussion</div>
+      </a>
+      <a href="mailto:mucahit.muzaffer@gmail.com" class="link-card">
+        <div class="link-card-icon">✉️</div>
+        <div class="link-card-title" data-i18n="l5-t">Email Support</div>
+        <div class="link-card-desc">mucahit.muzaffer@gmail.com</div>
+      </a>
+      <a href="../" class="link-card">
+        <div class="link-card-icon">🏠</div>
+        <div class="link-card-title" data-i18n="l6-t">Developer Home</div>
+        <div class="link-card-desc">mchtmzffr.github.io</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>BlueprintOutline · v1.4.2 · UE 5.3–5.8 · © <span id="year"></span> <a href="../">Muzaffer Karafil</a> · <a href="https://fab.com/s/43c6c4b3a39e" target="_blank" rel="noopener">Fab</a> · <a href="https://www.reddit.com/r/BlueprintOutline/" target="_blank" rel="noopener">Reddit</a></p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const I18N = {
+    en: {
+      'nav-video': 'Video', 'nav-features': 'Features', 'nav-install': 'Install', 'nav-feedback': 'Feedback', 'nav-cta': 'Get on Fab →',
+      'hero-title': 'Read your Blueprints,<br><span>don\'t just build them.</span>',
+      'hero-sub': 'BlueprintOutline turns complex Blueprint graphs into a clean, navigable execution tree — with one-click jump-to-node, real-time search, bookmarks, and human-readable documentation export.',
+      'hero-fab': '↓ Get on Fab', 'hero-video': '▶ Watch Overview',
+      'lbl-overview': 'Overview', 'video-title': 'See it in action',
+      'video-sub': 'Watch how BlueprintOutline turns a tangled graph into a readable execution tree in seconds.',
+      'lbl-features': 'Features', 'feat-heading': 'Everything you need',
+      'feat-sub': 'Built for developers navigating large, complex Blueprint systems — solo or on a team.',
+      'f1-t': 'Execution Tree View', 'f1-d': 'Full Event → Branch → Node hierarchy at a glance. Macros and collapsed graphs expand automatically. Flow lanes for parallel paths.',
+      'f2-t': 'Documentation Export', 'f2-d': 'Copy or export as plain text or Markdown — no K2Node noise. Pin values inline: Duration = 3.0. Optional documentation panel with semantic colors.',
+      'f3-t': 'Jump to Node', 'f3-d': 'Double-click any tree item to focus that node in the Blueprint graph. Two-way selection sync with the editor.',
+      'f4-t': 'Search & Filters', 'f4-d': 'Real-time search with regex. Filter by node type, errors, bookmarks, comments, return/reroute nodes, and reference entries.',
+      'f5-t': 'Bookmarks & Comments', 'f5-d': 'Bookmark important nodes across Blueprints. Add inline comments — updates instantly without recompiling.',
+      'f6-t': 'Keyboard Shortcuts', 'f6-d': 'Ctrl+F search · Ctrl+R refresh · Ctrl+E expand all · Ctrl+C copy tree · rename, duplicate, delete from context menu.',
+      'f7-t': 'Branch & Sequence', 'f7-d': 'True/False paths shown separately. Sequence pins listed in execution order. Switch and MultiGate lane labels.',
+      'f8-t': 'Async Build & Cache', 'f8-d': 'Large Blueprints build off the game thread. Smart cache with expansion-state preservation on refresh and compile.',
+      'f9-t': 'Multi-Editor Panels', 'f9-d': 'Each Blueprint Editor window gets its own embedded panel. Work on multiple Blueprints simultaneously.',
+      'lbl-compat': 'Compatibility', 'tag-editor': 'Editor-only · No runtime', 'tag-lang': 'English · Turkish UI',
+      'lbl-install': 'Quick start', 'install-title': 'Get running in 2 minutes',
+      'step1': 'Copy <strong>BlueprintOutline</strong> to your project\'s <strong>Plugins/</strong> folder (or install from Fab).',
+      'step2': 'Enable in <strong>Edit → Plugins</strong>, then restart the editor.',
+      'step3': 'Open any Blueprint → toolbar <strong>BlueprintOutline</strong> button or Window menu.',
+      'step4': 'Right-click a node → <strong>Copy Subtree from Here</strong> for documentation.',
+      'guide-note': 'Full guide ships in the plugin: <code style="color:var(--accent2);font-family:\'JetBrains Mono\',monospace;font-size:12px;">Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code>',
+      'lbl-doc': 'Export example', 'doc-title': 'Human-readable output',
+      'lbl-feedback': 'Feedback', 'fb-title': 'Tell us what you think',
+      'fb-sub': 'Your feedback shapes the next version. Bug reports, feature ideas, and workflow tips are all welcome.',
+      'fb-rating': 'Overall rating', 'fb-use': 'What do you use it for?', 'fb-select': 'Select…',
+      'fb-o1': 'Navigating large Blueprints', 'fb-o2': 'Debugging logic flow', 'fb-o3': 'Generating documentation',
+      'fb-o4': 'Onboarding team members', 'fb-o5': 'Blueprint code review', 'fb-o6': 'Other',
+      'fb-msg': 'Your feedback', 'fb-email': 'Email (optional)', 'fb-send': 'Send Feedback →',
+      'fb-ok': '✓ Thank you! Your feedback has been sent.',
+      'fb-alt': 'Or email directly: <a href="mailto:mucahit.muzaffer@gmail.com" style="color:var(--accent2);">mucahit.muzaffer@gmail.com</a>',
+      'lbl-links': 'Resources', 'links-title': 'Documentation & community',
+      'l1-t': 'Get on Fab', 'l1-d': 'Download and install the plugin',
+      'l2-d': 'Plugin overview and walkthrough', 'l3-t': 'Technical Docs', 'l3-d': 'Full feature reference',
+      'l4-d': 'Support, requests, discussion', 'l5-t': 'Email Support', 'l6-t': 'Developer Home'
+    },
+    tr: {
+      'nav-video': 'Video', 'nav-features': 'Özellikler', 'nav-install': 'Kurulum', 'nav-feedback': 'Geri Bildirim', 'nav-cta': 'Fab\'dan Al →',
+      'hero-title': 'Blueprint\'lerinizi<br><span>okuyun, sadece yazmayın.</span>',
+      'hero-sub': 'BlueprintOutline karmaşık graph\'ları temiz bir execution ağacına dönüştürür — tek tıkla node\'a gitme, anlık arama, bookmark ve insan okunur dokümantasyon export.',
+      'hero-fab': '↓ Fab\'dan İndir', 'hero-video': '▶ Tanıtım Videosu',
+      'lbl-overview': 'Genel Bakış', 'video-title': 'Canlı demo',
+      'video-sub': 'BlueprintOutline\'ın karmaşık bir graph\'ı saniyeler içinde okunabilir ağaca nasıl dönüştürdüğünü izleyin.',
+      'lbl-features': 'Özellikler', 'feat-heading': 'İhtiyacınız olan her şey',
+      'feat-sub': 'Büyük ve karmaşık Blueprint sistemlerinde çalışan geliştiriciler için — tek başına veya ekip ile.',
+      'f1-t': 'Execution Ağacı', 'f1-d': 'Event → Branch → Node hiyerarşisi bir bakışta. Macro ve collapsed graph\'lar otomatik açılır. Paralel yollar için flow lane.',
+      'f2-t': 'Dokümantasyon Export', 'f2-d': 'Düz metin veya Markdown kopyala/export — K2Node gürültüsü yok. Pin değerleri satır içi: Duration = 3.0. Opsiyonel doc paneli ve semantik renkler.',
+      'f3-t': 'Node\'a Git', 'f3-d': 'Ağaçtaki herhangi bir öğeye çift tıklayın — graph\'ta o node odaklanır. Editör ile çift yönlü seçim senkronu.',
+      'f4-t': 'Arama & Filtreler', 'f4-d': 'Regex destekli anlık arama. Node tipi, hata, bookmark, yorum, return/reroute ve referans girişlerine göre filtre.',
+      'f5-t': 'Bookmark & Yorum', 'f5-d': 'Önemli node\'ları bookmark\'la. Satır içi yorum ekle — compile beklemeden anında güncellenir.',
+      'f6-t': 'Klavye Kısayolları', 'f6-d': 'Ctrl+F arama · Ctrl+R yenile · Ctrl+E tümünü aç · Ctrl+C ağaç kopyala · sağ tık menüden rename, duplicate, delete.',
+      'f7-t': 'Branch & Sequence', 'f7-d': 'True/False yolları ayrı gösterilir. Sequence pin\'leri sırayla listelenir. Switch ve MultiGate lane etiketleri.',
+      'f8-t': 'Async Build & Cache', 'f8-d': 'Büyük Blueprint\'ler game thread dışında işlenir. Refresh ve compile sonrası expansion koruyan akıllı cache.',
+      'f9-t': 'Çoklu Editör Paneli', 'f9-d': 'Her Blueprint Editor penceresinin kendi gömülü paneli var. Birden fazla Blueprint\'te eşzamanlı çalışın.',
+      'lbl-compat': 'Uyumluluk', 'tag-editor': 'Sadece Editor · Runtime yok', 'tag-lang': 'İngilizce · Türkçe arayüz',
+      'lbl-install': 'Hızlı kurulum', 'install-title': '2 dakikada başlayın',
+      'step1': '<strong>BlueprintOutline</strong> klasörünü proje <strong>Plugins/</strong> içine kopyalayın (veya Fab\'dan kurun).',
+      'step2': '<strong>Edit → Plugins</strong> menüsünden etkinleştirin, editörü yeniden başlatın.',
+      'step3': 'Herhangi bir Blueprint açın → toolbar <strong>BlueprintOutline</strong> veya Window menüsü.',
+      'step4': 'Node\'a sağ tık → <strong>Copy Subtree from Here</strong> ile dokümantasyon.',
+      'guide-note': 'Tam kılavuz plugin içinde: <code style="color:var(--accent2);font-family:\'JetBrains Mono\',monospace;font-size:12px;">Documentation/BlueprintOutline_UserGuide_TR_EN.docx</code>',
+      'lbl-doc': 'Export örneği', 'doc-title': 'İnsan okunur çıktı',
+      'lbl-feedback': 'Geri Bildirim', 'fb-title': 'Görüşlerinizi paylaşın',
+      'fb-sub': 'Geri bildiriminiz bir sonraki sürümü şekillendirir. Hata, özellik önerisi ve iş akışı ipuçları memnuniyetle karşılanır.',
+      'fb-rating': 'Genel puan', 'fb-use': 'Ne için kullanıyorsunuz?', 'fb-select': 'Seçin…',
+      'fb-o1': 'Büyük Blueprint\'lerde gezinme', 'fb-o2': 'Mantık akışını debug', 'fb-o3': 'Dokümantasyon üretme',
+      'fb-o4': 'Ekibe onboarding', 'fb-o5': 'Blueprint code review', 'fb-o6': 'Diğer',
+      'fb-msg': 'Geri bildiriminiz', 'fb-email': 'E-posta (opsiyonel)', 'fb-send': 'Gönder →',
+      'fb-ok': '✓ Teşekkürler! Geri bildiriminiz iletildi.',
+      'fb-alt': 'Veya doğrudan e-posta: <a href="mailto:mucahit.muzaffer@gmail.com" style="color:var(--accent2);">mucahit.muzaffer@gmail.com</a>',
+      'lbl-links': 'Kaynaklar', 'links-title': 'Dokümantasyon & topluluk',
+      'l1-t': 'Fab\'dan Al', 'l1-d': 'Plugin\'i indir ve kur',
+      'l2-d': 'Plugin tanıtım ve walkthrough', 'l3-t': 'Teknik Dokümantasyon', 'l3-d': 'Tam özellik referansı',
+      'l4-d': 'Destek, istekler, tartışma', 'l5-t': 'E-posta Desteği', 'l6-t': 'Geliştirici Ana Sayfa'
+    }
+  };
+
+  let currentLang = 'en';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang-set]').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-set') === lang);
     });
-  </script>
+    const strings = I18N[lang] || I18N.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (strings[key]) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('select option[data-i18n]').forEach(opt => {
+      const key = opt.getAttribute('data-i18n');
+      if (strings[key]) opt.textContent = strings[key];
+    });
+    const fbPlaceholder = lang === 'tr'
+      ? 'Neyi beğendiniz? Neyi geliştirelim?'
+      : 'What\'s working well? What would make this better?';
+    const ta = document.getElementById('feedbackText');
+    if (ta) ta.placeholder = fbPlaceholder;
+  }
+
+  document.querySelectorAll('[data-lang-set]').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang-set')));
+  });
+
+  const stars = document.querySelectorAll('.star');
+  let currentRating = 0;
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      currentRating = parseInt(star.dataset.v, 10);
+      document.getElementById('ratingValue').value = currentRating;
+      stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.v, 10) <= currentRating));
+    });
+  });
+
+  const form = document.getElementById('feedbackForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const rating = document.getElementById('ratingValue').value || '—';
+      const useCase = document.getElementById('useCase').value || '—';
+      const text = document.getElementById('feedbackText').value.trim();
+      const email = document.getElementById('feedbackEmail').value.trim();
+      if (!text) { document.getElementById('feedbackText').focus(); return; }
+      const subject = encodeURIComponent('BlueprintOutline Feedback');
+      const body = encodeURIComponent(
+        'Rating: ' + rating + '\nUse case: ' + useCase + '\n\n' + text + (email ? '\n\nReply to: ' + email : '')
+      );
+      window.location.href = 'mailto:mucahit.muzaffer@gmail.com?subject=' + subject + '&body=' + body;
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  }
+
+  if (new URLSearchParams(location.search).get('lang') === 'tr') applyLang('tr');
+</script>
 </body>
 </html>
